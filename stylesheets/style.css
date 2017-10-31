@@ -7,14 +7,40 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Oswald", sans-serif; }
 
+.button {
+  background-color: #C83600;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.8vw;
+  font-weight: 500;
+  padding: 20px 50px;
+  text-decoration: none; }
+  .button:hover {
+    background-color: #952800; }
+
 .uppercase {
   text-transform: uppercase; }
+
+nav {
+  display: flex;
+  justify-content: flex-end; }
+  nav a {
+    color: #FFFFFF;
+    padding: 20px;
+    text-decoration: none; }
+    nav a:hover {
+      color: #e6e6e6; }
 
 header.hero {
   background-image: url("../images/hero_bg_1.png");
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   height: 95vh;
+  min-height: 39vw;
   text-align: center;
   width: 100vw; }
   header.hero .title {
@@ -38,5 +64,14 @@ header.hero {
     font-size: 2.1vw;
     font-weight: bold;
     line-height: 39px; }
+
+.lead-section {
+  padding: 0 10vw 0 10vw;
+  text-align: center; }
+  .lead-section .lead {
+    color: #01333B;
+    font-size: 3.4vw;
+    line-height: 5.5vw;
+    margin-bottom: 8vw; }
 
 /*# sourceMappingURL=style.css.map */
