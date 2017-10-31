@@ -1,11 +1,39 @@
+// Fonts
 $font-primary: 'Muli', sans-serif;
 $font-accent: 'Oswald', sans-serif;
 $font-brand: 'Mr Dafoe', cursive;
 
+// Colors
 $white: #FFFFFF;
 $black: #01161A;
 $teal: #01333B;
 $orange: #C83600;
+$mint: #9EBCC0;
+$mustard: #D09E4B;
+$grey: #374142;
+
+// Space
+$default: 16px;
+$xs: 4px;
+$sm: 8px;
+$md: 16px;
+$lg: 32px;
+$xl: 64px;
+$xxl: 128px;
+$inset-default: 16px 16px 16px 16px;
+$inset-xs: 4px 4px 4px 4px;
+$inset-s: 8px 8px 8px 8px;
+$inset-m: 16px 16px 16px 16px;
+$inset-lg: 32px 32px 32px 32px;
+$inset-xl: 64px 64px 64px 64px;
+$stack-default: 0 0 16px 0;
+$stack-xs: 0 0 4px 0;
+$stack-s: 0 0 8px 0;
+$stack-m: 0 0 16px 0;
+$stack-lg: 0 0 32px 0;
+$stack-xl: 0 0 64px 0;
+
+// Base styles for 1366px width, 960px max container width
 
 body {
   padding: 0;
@@ -18,36 +46,74 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-accent;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  padding: $xl 0;
+
+  .section-title {
+    color: $mint;
+    font-size: 78px;
+    font-weight: 500;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  h2 {
+    color: $mustard;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $grey;
+    font-size: 22px;
+  }
+
+  &.inset {
+    max-width: 960px;
+  }
+}
+
 .button {
   background-color: $orange;
   border-radius: 2px;
-  -webkit-box-shadow: 0 3px 5px 6px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 3px 5px 6px rgba(0,0,0,0.1);
-  box-shadow: 0 3px 5px 6px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
   color: $white;
   font-family: $font-accent;
-  font-size: 2.8vw;
+  font-size: 24px;
   font-weight: 500;
-  padding: 20px 50px;
+  padding: $md $lg;
   text-decoration: none;
 
   &:hover {
     background-color: darken($orange, 10%);
-    // color: darken($white, 10%);
   }
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
 
+// Helpers
+.uppercase {text-transform: uppercase;}
+.right {text-align: right;}
+.vertical-space-sm {height: $sm;}
+.vertical-space-xl {height: $xl;}
+
+
+// Styles
 nav {
   display: flex;
   justify-content: flex-end;
 
   a {
     color: $white;
-    padding: 20px;
+    padding: $default;
     text-decoration: none;
 
     // TODO: Pointer seems weirdly misaligned when trying to hover after first element
@@ -55,10 +121,16 @@ nav {
       color: darken($white, 10%);
     }
   }
+
+  &.stand-alone {
+    background-image: url('../images/hero_bg_1.png');
+    background-size: cover;
+  }
 }
 
 header.hero {
   background-image: url('../images/hero_bg_1.png');
+  background-size: cover;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   height: 95vh;
@@ -70,10 +142,9 @@ header.hero {
   .title {
     color: $white;
     font-family: $font-brand;
-    font-size: 12vw;
+    font-size: 150px;
     font-weight: normal;
-    line-height: 238px;
-    margin: 0;
+    margin: $xl 0 0 0;
     padding: 0;
     // TODO: shadow not working
     text-shadow: 0 2px 26px 0 rgba(0,0,0,0.18);
@@ -82,28 +153,39 @@ header.hero {
 
   .subtitle {
     font-family: 'Muli', sans-serif;
-    font-size: 3.6vw;
-    line-height: 66px;
-    margin: 0;
+    font-size: 40px;
     padding: 0;
+    margin: 0;
   }
 
   .lead {
     color: $white;
-    font-size: 2.1vw;
+    font-size: 26px;
     font-weight: bold;
-    line-height: 39px;
+    margin: 0;
   }
 }
 
-.lead-section {
-  padding: 0 10vw 0 10vw;
+#lead-section {
   text-align: center;
 
   .lead {
     color: $teal;
-    font-size: 3.4vw;
-    line-height: 5.5vw;
-    margin-bottom: 8vw;
+    font-size: 40px;
+    // margin-bottom: 8vw;
+  }
+}
+
+.service {
+  align-items: center;
+  display: flex;
+  margin-bottom: $xxl;
+
+  .service-description {
+    padding: $xl;
+  }
+
+  img {
+    width: 50vw;
   }
 }
