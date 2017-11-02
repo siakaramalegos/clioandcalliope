@@ -106,6 +106,26 @@ header.hero {
   .service img {
     max-width: 100%; }
 
+footer {
+  background-color: #01333B;
+  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  padding: 64px 32px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  footer .social-media p a {
+    color: #BFCED1;
+    font-size: 1.6em;
+    text-decoration: none;
+    margin-left: 4px; }
+    footer .social-media p a:hover {
+      color: #a1b7bc; }
+  footer .copyright p {
+    color: #BFCED1;
+    font-weight: 300;
+    font-size: 0.8em; }
+
 @media screen and (max-width: 960px) {
   body {
     font-size: 120%; }
