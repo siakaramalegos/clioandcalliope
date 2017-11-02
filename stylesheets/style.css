@@ -2,32 +2,31 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Muli", sans-serif;
-  color: #01161A; }
+  color: #01161A;
+  font-size: 137%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Oswald", sans-serif; }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+p {
+  color: #374142;
+  font-size: 1em; }
+  p.lead {
+    color: #01333B;
+    font-size: 2em; }
 
 section {
-  padding: 64px 0; }
+  padding: 64px 32px; }
   section .section-title {
     color: #9EBCC0;
-    font-size: 78px;
+    font-size: 3.5em;
     font-weight: 500;
     opacity: 0.7;
     text-align: center; }
   section h2 {
     color: #D09E4B;
-    font-size: 36px;
+    font-size: 1.6em;
     text-transform: uppercase; }
-  section p {
-    color: #374142;
-    font-size: 22px; }
   section.inset {
     max-width: 960px; }
 
@@ -51,6 +50,9 @@ section {
 
 .right {
   text-align: right; }
+
+.center {
+  text-align: center; }
 
 .vertical-space-sm {
   height: 8px; }
@@ -78,8 +80,7 @@ header.hero {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   height: 95vh;
   min-height: 39vw;
-  text-align: center;
-  width: 100vw; }
+  text-align: center; }
   header.hero .title {
     color: #FFFFFF;
     font-family: "Mr Dafoe", cursive;
@@ -100,19 +101,26 @@ header.hero {
     font-weight: bold;
     margin: 0; }
 
-#lead-section {
-  text-align: center; }
-  #lead-section .lead {
-    color: #01333B;
-    font-size: 40px; }
-
 .service {
-  align-items: center;
-  display: flex;
   margin-bottom: 128px; }
-  .service .service-description {
-    padding: 64px; }
   .service img {
-    width: 50vw; }
+    max-width: 100%; }
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 120%; }
+
+  header.hero .title {
+    font-size: calc(24px + 10vw); }
+  header.hero .subtitle {
+    font-size: calc(16px + 2vw); }
+  header.hero .lead {
+    font-size: calc(14px + 1vw); } }
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 100%; }
+
+  p.lead {
+    font-size: 1.5em; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,25 +7,37 @@ body {
   margin: 0;
   font-family: $font-primary;
   color: $black;
+  font-size: 137%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-accent;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+p {
+  color: $grey;
+  font-size: 1em;
+
+  &.lead {
+    color: $teal;
+    font-size: 2em;
+    // margin-bottom: 8vw;
+  }
 }
 
+// main {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
+
 section {
-  padding: $xl 0;
+  padding: $xl $lg;
 
   .section-title {
     color: $mint;
-    font-size: 78px;
+    font-size: 3.5em;
     font-weight: 500;
     opacity: 0.7;
     text-align: center;
@@ -33,13 +45,8 @@ section {
 
   h2 {
     color: $mustard;
-    font-size: 36px;
+    font-size: 1.6em;
     text-transform: uppercase;
-  }
-
-  p {
-    color: $grey;
-    font-size: 22px;
   }
 
   &.inset {
@@ -69,6 +76,7 @@ section {
 // Helpers
 .uppercase {text-transform: uppercase;}
 .right {text-align: right;}
+.center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-xl {height: $xl;}
 
@@ -103,9 +111,8 @@ header.hero {
   height: 95vh;
   min-height: 39vw;
   text-align: center;
-  width: 100vw;
+  // width: 100vw;
 
-  // TODO: Need to make these font sizes bigger at smaller break points for all 3 classes below, and also adjust line-heights
   .title {
     color: $white;
     font-family: $font-brand;
@@ -133,26 +140,48 @@ header.hero {
   }
 }
 
-#lead-section {
-  text-align: center;
+.service {
+  // align-items: center;
+  // display: flex;
+  margin-bottom: $xxl;
 
-  .lead {
-    color: $teal;
-    font-size: 40px;
-    // margin-bottom: 8vw;
+  // .service-description {
+    // padding: $xl;
+  // }
+
+  img {
+    max-width: 100%;
+    // height: auto;
   }
 }
 
-.service {
-  align-items: center;
-  display: flex;
-  margin-bottom: $xxl;
-
-  .service-description {
-    padding: $xl;
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 120%;
   }
 
-  img {
-    width: 50vw;
+  header.hero {
+    .title {
+
+      font-size: calc(24px + 10vw);
+    }
+
+    .subtitle {
+      font-size: calc(16px + 2vw);
+    }
+
+    .lead {
+      font-size: calc(14px + 1vw);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 100%;
+  }
+
+  p.lead {
+    font-size: 1.5em;
   }
 }
