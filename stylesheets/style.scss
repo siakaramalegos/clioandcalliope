@@ -1,37 +1,4 @@
-// Fonts
-$font-primary: 'Muli', sans-serif;
-$font-accent: 'Oswald', sans-serif;
-$font-brand: 'Mr Dafoe', cursive;
-
-// Colors
-$white: #FFFFFF;
-$black: #01161A;
-$teal: #01333B;
-$orange: #C83600;
-$mint: #9EBCC0;
-$mustard: #D09E4B;
-$grey: #374142;
-
-// Space
-$default: 16px;
-$xs: 4px;
-$sm: 8px;
-$md: 16px;
-$lg: 32px;
-$xl: 64px;
-$xxl: 128px;
-$inset-default: 16px 16px 16px 16px;
-$inset-xs: 4px 4px 4px 4px;
-$inset-s: 8px 8px 8px 8px;
-$inset-m: 16px 16px 16px 16px;
-$inset-lg: 32px 32px 32px 32px;
-$inset-xl: 64px 64px 64px 64px;
-$stack-default: 0 0 16px 0;
-$stack-xs: 0 0 4px 0;
-$stack-s: 0 0 8px 0;
-$stack-m: 0 0 16px 0;
-$stack-lg: 0 0 32px 0;
-$stack-xl: 0 0 64px 0;
+@import 'variables';
 
 // Base styles for 1366px width, 960px max container width
 
