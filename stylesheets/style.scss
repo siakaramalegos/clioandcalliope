@@ -91,6 +91,7 @@ section.gradient-fill {
   color: $white;
   width: 100vw;
   box-sizing: border-box;
+  padding-top: $xxl;
 
   .inset-1220 {
     max-width: 1220px;
@@ -169,20 +170,33 @@ header.hero {
   }
 }
 
-// stack at 750px
-// max width 500px
 .service {
-  // align-items: center;
-  // display: flex;
+  align-items: center;
+  display: flex;
   margin-bottom: $xxl;
 
   .service-description {
-    padding: $lg;
+    padding: $lg $xxl $lg $lg;
+    h2 {
+      margin: 16px 0;
+    }
   }
 
   img {
-    max-width: 100%;
-    // height: auto;
+    box-sizing: border-box;
+    height: auto;
+    padding: 0 $md 0 0;
+    width: 50%;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+    .service-description {
+      padding: $lg $lg $lg $xxl;
+    }
+    img {
+      padding: 0 0 0 $md;
+    }
   }
 }
 
@@ -214,7 +228,6 @@ header.hero {
     line-height: 42px;
     margin: $md;
     width: 140px;
-    // width: 102px;
     i.fa {
       font-size: 50px;
     }
@@ -254,8 +267,15 @@ footer {
       font-size: 0.8em;
     }
   }
-  // height: 95vh;
-  // min-height: 39vw;
+}
+
+@media screen and (max-width: 1080px) {
+  .service .service-description {
+    padding: $lg 0 $lg $lg;
+  }
+  .service.reverse .service-description {
+    padding: $lg $lg $lg 0;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -265,16 +285,43 @@ footer {
 
   header.hero {
     .title {
-
       font-size: calc(24px + 10vw);
     }
-
     .subtitle {
       font-size: calc(16px + 2vw);
     }
-
     .lead {
       font-size: calc(14px + 1vw);
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .service {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    .service-description {
+      padding: 0;
+      max-width: 500px;
+    }
+
+    img {
+      height: auto;
+      padding: 0;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    &.reverse {
+      flex-direction: column;
+      .service-description {
+        padding: 0;
+      }
+      img {
+        padding: 0;
+      }
     }
   }
 }
@@ -283,12 +330,13 @@ footer {
   body {
     font-size: 100%;
   }
-
   p.lead {
     font-size: 1.5em;
   }
-
   .technologies-list li {
     width: 102px;
+  }
+  .service .service-description, .service.reverse .service-description {
+    font-size: 1.2em;
   }
 }
