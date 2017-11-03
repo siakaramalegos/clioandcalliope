@@ -22,7 +22,11 @@ main {
   justify-content: center; }
 
 section {
-  padding: 64px 32px; }
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 32px;
+  width: 100%; }
   section .section-title {
     color: #9EBCC0;
     font-size: 3.5em;
@@ -33,8 +37,6 @@ section {
     color: #D09E4B;
     font-size: 1.6em;
     text-transform: uppercase; }
-  section.inset {
-    max-width: 960px; }
 
 .button {
   background-color: #C83600;
@@ -66,6 +68,12 @@ section {
 .vertical-space-xl {
   height: 64px; }
 
+.inset-960 {
+  max-width: 960px; }
+
+.inset-1220 {
+  max-width: 1220px; }
+
 section.gradient-fill {
   background-color: #0AA8BE;
   background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
@@ -81,7 +89,9 @@ section.gradient-fill {
 
 nav {
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  max-width: 1220px;
+  width: 100%; }
   nav a {
     color: #FFFFFF;
     padding: 16px;
@@ -93,10 +103,13 @@ nav {
     background-size: cover; }
 
 header.hero {
+  align-items: center;
   background-image: url("../images/hero_bg_1.png");
   background-size: cover;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+  display: flex;
+  flex-direction: column;
   height: 95vh;
   min-height: 39vw;
   text-align: center; }
@@ -141,20 +154,25 @@ footer {
   -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   padding: 64px 32px 8px;
-  display: flex;
   align-items: center;
-  justify-content: space-between; }
-  footer .social-media p a {
-    color: #BFCED1;
-    font-size: 1.6em;
-    text-decoration: none;
-    margin-left: 4px; }
-    footer .social-media p a:hover {
-      color: #a1b7bc; }
-  footer .copyright p {
-    color: #BFCED1;
-    font-weight: 300;
-    font-size: 0.8em; }
+  display: flex;
+  flex-direction: column; }
+  footer div.inset-1220 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    footer div.inset-1220 .social-media p a {
+      color: #BFCED1;
+      font-size: 1.6em;
+      text-decoration: none;
+      margin-left: 4px; }
+      footer div.inset-1220 .social-media p a:hover {
+        color: #a1b7bc; }
+    footer div.inset-1220 .copyright p {
+      color: #BFCED1;
+      font-weight: 300;
+      font-size: 0.8em; }
 
 @media screen and (max-width: 960px) {
   body {

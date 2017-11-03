@@ -32,7 +32,11 @@ main {
 }
 
 section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: $xl $lg;
+  width: 100%;
 
   .section-title {
     color: $mint;
@@ -46,10 +50,6 @@ section {
     color: $mustard;
     font-size: 1.6em;
     text-transform: uppercase;
-  }
-
-  &.inset {
-    max-width: 960px;
   }
 }
 
@@ -78,6 +78,9 @@ section {
 .center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-xl {height: $xl;}
+.inset-960 {max-width: 960px;}
+.inset-1220 {max-width: 1220px;}
+
 section.gradient-fill {
   background-color: #0AA8BE; // fallback for old browsers
   background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
@@ -100,6 +103,8 @@ section.gradient-fill {
 nav {
   display: flex;
   justify-content: flex-end;
+  max-width: 1220px;
+  width: 100%;
 
   a {
     color: $white;
@@ -119,10 +124,13 @@ nav {
 }
 
 header.hero {
+  align-items: center;
   background-image: url('../images/hero_bg_1.png');
   background-size: cover;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+  display: flex;
+  flex-direction: column;
   height: 95vh;
   min-height: 39vw;
   text-align: center;
@@ -189,25 +197,32 @@ footer {
   -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   padding: $xl $lg $sm;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 
-  .social-media p a {
-    color: $light-grey;
-    font-size: 1.6em;
-    text-decoration: none;
-    margin-left: $xs;
+  div.inset-1220 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    &:hover {
-      color: darken($color: $light-grey, $amount: 10%);
+    .social-media p a {
+      color: $light-grey;
+      font-size: 1.6em;
+      text-decoration: none;
+      margin-left: $xs;
+
+      &:hover {
+        color: darken($color: $light-grey, $amount: 10%);
+      }
     }
-  }
 
-  .copyright p {
-    color: $light-grey;
-    font-weight: 300;
-    font-size: 0.8em;
+    .copyright p {
+      color: $light-grey;
+      font-weight: 300;
+      font-size: 0.8em;
+    }
   }
   // height: 95vh;
   // min-height: 39vw;
