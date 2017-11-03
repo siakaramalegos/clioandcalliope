@@ -21,16 +21,15 @@ p {
   &.lead {
     color: $teal;
     font-size: 2em;
-    // margin-bottom: 8vw;
   }
 }
 
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-// }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 section {
   padding: $xl $lg;
@@ -79,6 +78,14 @@ section {
 .center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-xl {height: $xl;}
+.gradient-fill {
+  background: radial-gradient(circle, $pond 0%, $yellow 100%);
+  color: $white;
+
+  .lead {
+    color: $white;
+  }
+}
 
 
 // Styles
@@ -155,6 +162,18 @@ header.hero {
   }
 }
 
+.specialties-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+
+  li {
+    width: 240px;
+  }
+}
+
 footer {
   background-color: $teal;
   -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
@@ -213,4 +232,8 @@ footer {
   p.lead {
     font-size: 1.5em;
   }
+
+  // .specialties-list li {
+  //   width: 200px;
+  // }
 }
