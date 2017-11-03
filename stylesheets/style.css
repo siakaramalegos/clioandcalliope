@@ -151,7 +151,25 @@ header.hero {
   justify-content: space-between;
   padding: 0; }
   .specialties-list li {
-    width: 240px; }
+    width: 240px;
+    line-height: 42px; }
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 32px -16px 64px;
+  padding: 0; }
+  .technologies-list li {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 42px;
+    margin: 16px;
+    width: 140px; }
+    .technologies-list li i.fa {
+      font-size: 50px; }
 
 footer {
   background-color: #01333B;
@@ -193,6 +211,9 @@ footer {
     font-size: 100%; }
 
   p.lead {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+
+  .technologies-list li {
+    width: 102px; } }
 
 /*# sourceMappingURL=style.css.map */

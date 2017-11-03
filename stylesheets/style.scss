@@ -195,7 +195,31 @@ header.hero {
 
   li {
     width: 240px;
+    line-height: 42px;
   }
+}
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: $lg -16px $xl;
+  padding: 0;
+
+  li {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 42px;
+    margin: $md;
+    width: 140px;
+    // width: 102px;
+    i.fa {
+      font-size: 50px;
+    }
+  }
+
 }
 
 footer {
@@ -264,7 +288,7 @@ footer {
     font-size: 1.5em;
   }
 
-  // .specialties-list li {
-  //   width: 200px;
-  // }
+  .technologies-list li {
+    width: 102px;
+  }
 }
