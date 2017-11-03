@@ -78,10 +78,16 @@ section {
 .center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-xl {height: $xl;}
-.gradient-fill {
-  background: radial-gradient(circle, $pond 0%, $yellow 100%);
+section.gradient-fill {
+  background-color: #0AA8BE; // fallback for old browsers
+  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
+  background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
+  background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
   color: $white;
 
+  .section-title {
+    color: rgba(255,255,255,0.65);
+  }
   .lead {
     color: $white;
   }
@@ -147,14 +153,16 @@ header.hero {
   }
 }
 
+// stack at 750px
+// max width 500px
 .service {
   // align-items: center;
   // display: flex;
   margin-bottom: $xxl;
 
-  // .service-description {
-    // padding: $xl;
-  // }
+  .service-description {
+    padding: $lg;
+  }
 
   img {
     max-width: 100%;

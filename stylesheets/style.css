@@ -66,10 +66,15 @@ section {
 .vertical-space-xl {
   height: 64px; }
 
-.gradient-fill {
-  background: radial-gradient(circle, #1473E5 0%, #FDDF79 100%);
+section.gradient-fill {
+  background-color: #0AA8BE;
+  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
+  background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
+  background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
   color: #FFFFFF; }
-  .gradient-fill .lead {
+  section.gradient-fill .section-title {
+    color: rgba(255, 255, 255, 0.65); }
+  section.gradient-fill .lead {
     color: #FFFFFF; }
 
 nav {
@@ -115,6 +120,8 @@ header.hero {
 
 .service {
   margin-bottom: 128px; }
+  .service .service-description {
+    padding: 32px; }
   .service img {
     max-width: 100%; }
 
