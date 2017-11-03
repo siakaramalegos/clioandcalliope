@@ -71,6 +71,8 @@ section.gradient-fill {
   background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
   background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
+  -webkit-clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
+  clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   color: #FFFFFF; }
   section.gradient-fill .section-title {
     color: rgba(255, 255, 255, 0.65); }
