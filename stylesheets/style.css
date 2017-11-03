@@ -26,7 +26,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 64px 32px;
-  width: 100%; }
+  max-width: 100%; }
   section .section-title {
     color: #9EBCC0;
     font-size: 3.5em;
@@ -81,7 +81,11 @@ section.gradient-fill {
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
   -webkit-clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  width: 100vw;
+  box-sizing: border-box; }
+  section.gradient-fill .inset-1220 {
+    max-width: 1220px; }
   section.gradient-fill .section-title {
     color: rgba(255, 255, 255, 0.65); }
   section.gradient-fill .lead {
