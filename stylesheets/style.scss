@@ -339,4 +339,7 @@ footer {
   .service .service-description, .service.reverse .service-description {
     font-size: 1.2em;
   }
+  section {
+    padding: $lg $sm;
+  }
 }

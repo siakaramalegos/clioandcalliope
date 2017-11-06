@@ -256,6 +256,9 @@ footer {
     width: 102px; }
 
   .service .service-description, .service.reverse .service-description {
-    font-size: 1.2em; } }
+    font-size: 1.2em; }
+
+  section {
+    padding: 32px 8px; } }
 
 /*# sourceMappingURL=style.css.map */
