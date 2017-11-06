@@ -7,6 +7,10 @@ var useref = require('gulp-useref'); // concatenates files
 var gulpIf = require('gulp-if'); // checks file type
 var uglify = require('gulp-uglify'); // minimizes JS
 var cssnano = require('gulp-cssnano'); // minimizes css
+var imagemin = require('gulp-imagemin'); // optimizes images
+var cache = require('gulp-cache'); // caches since images esp slow
+var del = require('del'); // deletes files
+var runSequence = require('run-sequence'); // run tasks in sequence
 
 // Setting up browserSync to automatically reload on file changes
 gulp.task('browserSync', function () {
@@ -37,6 +41,30 @@ gulp.task('useref', function () {
     // Minify only CSS files
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('build'))
+});
+
+// Optimize images and cache them while doing so
+gulp.task('images', function () {
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest('build/images'))
+});
+
+// Delete build files
+gulp.task('clean:build', function () {
+  return del.sync('build');
+});
+
+gulp.task('cache:clear', function (callback) {
+  return cache.clearAll(callback)
+});
+
+gulp.task('build', function (callback) {
+  runSequence(
+    'clean:build',
+    ['sass', 'useref', 'images'],
+    callback
+  )
 });
 
 // Complete browserSync and sass task before running watch functions
