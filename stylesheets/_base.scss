@@ -1,5 +1,17 @@
 @import 'variables';
 
+@mixin breakpoint($point) {
+  @if $point == medium-screen {
+    @media (max-width: 600px) { @content; }
+  }
+  @else if $point == small-screen {
+    @media (max-width: 960px) { @content; }
+  }
+  // @else if $point == baby-bear {
+  //   @media (max-width: 650px)  { @content; }
+  // }
+}
+
 // Base styles for 1366px width, 1220px max container width
 
 body {
@@ -8,6 +20,12 @@ body {
   font-family: $font-primary;
   color: $black;
   font-size: 137%;
+  @include breakpoint(medium-screen) {
+    font-size: 120%;
+  }
+  @include breakpoint(small-screen) {
+    font-size: 100%;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,6 +39,9 @@ p {
   &.lead {
     color: $teal;
     font-size: 2em;
+    @include breakpoint(small-screen) {
+      font-size: 1.5em;
+    }
   }
 }
 
@@ -50,6 +71,9 @@ section {
     color: $mustard;
     font-size: 1.6em;
     text-transform: uppercase;
+  }
+  @include breakpoint(small-screen) {
+    padding: $lg $sm;
   }
 }
 
@@ -172,23 +196,5 @@ footer {
       font-weight: 300;
       font-size: 0.8em;
     }
-  }
-}
-
-@media screen and (max-width: 960px) {
-  body {
-    font-size: 120%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 100%;
-  }
-  p.lead {
-    font-size: 1.5em;
-  }
-  section {
-    padding: $lg $sm;
   }
 }
