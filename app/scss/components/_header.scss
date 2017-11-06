@@ -1,0 +1,55 @@
+header {
+  &.nav-only {
+    align-items: center;
+    background-color: #0AA8BE; // fallback for old browsers
+    background-image: url("../images/nav_bg.png");
+    background-size: cover;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+    // display: flex;
+    // flex-direction: column;
+    // height: 60vh;
+    // min-height: 550px;
+    text-align: center;
+  }
+
+  &.hero {
+    align-items: center;
+    background-color: #0AA8BE; // fallback for old browsers
+    background-image: url('../images/hero_bg_1.png');
+    background-size: cover;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    min-height: 550px;
+    text-align: center;
+
+    .title {
+      color: $white;
+      font-family: $font-brand;
+      font-size: 150px;
+      font-weight: normal;
+      margin: $xl 0 0 0;
+      padding: 0;
+      // TODO: shadow not working
+      text-shadow: 0 2px 26px 0 rgba(0,0,0,0.18);
+      transform: rotate(715deg);
+    }
+
+    .subtitle {
+      font-family: 'Muli', sans-serif;
+      font-size: 40px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .lead {
+      color: $white;
+      font-size: 26px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}

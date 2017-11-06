@@ -12,8 +12,17 @@
   // }
 }
 
-// Base styles for 1366px width, 1220px max container width
+// Helpers
+.uppercase {text-transform: uppercase;}
+.right {text-align: right;}
+.center {text-align: center;}
+.vertical-space-sm {height: $sm;}
+.vertical-space-xl {height: $xl;}
+.inset-960 {max-width: 960px;}
+.inset-1220 {max-width: 1220px;}
 
+
+// Base styles for 1366px width, 1220px max container width
 body {
   padding: 0;
   margin: 0;
@@ -52,149 +61,10 @@ main {
   justify-content: center;
 }
 
-section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: $xl $lg;
-  max-width: 100%;
 
-  .section-title {
-    color: $mint;
-    font-size: 3.5em;
-    font-weight: 500;
-    opacity: 0.7;
-    text-align: center;
-  }
-
-  h2 {
-    color: $mustard;
-    font-size: 1.6em;
-    text-transform: uppercase;
-  }
-  @include breakpoint(small-screen) {
-    padding: $lg $sm;
-  }
-}
-
-.button {
-  background-color: $orange;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
-  box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
-  color: $white;
-  font-family: $font-accent;
-  font-size: 24px;
-  font-weight: 500;
-  padding: $md $lg;
-  text-decoration: none;
-
-  &:hover {
-    background-color: darken($orange, 10%);
-  }
-}
-
-
-// Helpers
-.uppercase {text-transform: uppercase;}
-.right {text-align: right;}
-.center {text-align: center;}
-.vertical-space-sm {height: $sm;}
-.vertical-space-xl {height: $xl;}
-.inset-960 {max-width: 960px;}
-.inset-1220 {max-width: 1220px;}
-
-section.gradient-fill {
-  background-color: #0AA8BE; // fallback for old browsers
-  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
-  background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
-  background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
-  -webkit-clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
-  clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
-  color: $white;
-  width: 100vw;
-  box-sizing: border-box;
-  padding-top: $xxl;
-
-  .inset-1220 {
-    max-width: 1220px;
-  }
-
-  .section-title {
-    color: rgba(255,255,255,0.65);
-  }
-  .lead {
-    color: $white;
-  }
-}
-
-
-// Styles
-nav {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 1220px;
-  width: 100%;
-
-  a {
-    color: $white;
-    padding: $default;
-    text-decoration: none;
-
-    // TODO: Pointer seems weirdly misaligned when trying to hover after first element
-    &:hover {
-      color: darken($white, 10%);
-    }
-  }
-}
-
-header {
-  &.nav-only {
-    align-items: center;
-    background-color: #0AA8BE; // fallback for old browsers
-    background-image: url("../images/nav_bg.png");
-    background-size: cover;
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
-    // display: flex;
-    // flex-direction: column;
-    // height: 60vh;
-    // min-height: 550px;
-    text-align: center;
-  }
-}
-
-footer {
-  background-color: $teal;
-  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
-  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
-  padding: $xl $lg $sm;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-
-  div.inset-1220 {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    .social-media p a {
-      color: $light-grey;
-      font-size: 1.6em;
-      text-decoration: none;
-      margin-left: $xs;
-
-      &:hover {
-        color: darken($color: $light-grey, $amount: 10%);
-      }
-    }
-
-    .copyright p {
-      color: $light-grey;
-      font-weight: 300;
-      font-size: 0.8em;
-    }
-  }
-}
+// Components
+@import 'components/nav';
+@import 'components/header';
+@import 'components/section';
+@import 'components/button';
+@import 'components/footer';

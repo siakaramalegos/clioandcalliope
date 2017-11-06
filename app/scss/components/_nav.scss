@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1220px;
+  width: 100%;
+
+  a {
+    color: $white;
+    padding: $default;
+    text-decoration: none;
+
+    // TODO: Pointer seems weirdly misaligned when trying to hover after first element
+    &:hover {
+      color: darken($white, 10%);
+    }
+  }
+}

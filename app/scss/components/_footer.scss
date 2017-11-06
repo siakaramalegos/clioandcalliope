@@ -1,0 +1,33 @@
+footer {
+  background-color: $teal;
+  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  padding: $xl $lg $sm;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  div.inset-1220 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .social-media p a {
+      color: $light-grey;
+      font-size: 1.6em;
+      text-decoration: none;
+      margin-left: $xs;
+
+      &:hover {
+        color: darken($color: $light-grey, $amount: 10%);
+      }
+    }
+
+    .copyright p {
+      color: $light-grey;
+      font-weight: 300;
+      font-size: 0.8em;
+    }
+  }
+}

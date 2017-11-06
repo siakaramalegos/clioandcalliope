@@ -1,0 +1,48 @@
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: $xl $lg;
+  max-width: 100%;
+
+  .section-title {
+    color: $mint;
+    font-size: 3.5em;
+    font-weight: 500;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  h2 {
+    color: $mustard;
+    font-size: 1.6em;
+    text-transform: uppercase;
+  }
+  @include breakpoint(small-screen) {
+    padding: $lg $sm;
+  }
+}
+
+section.gradient-fill {
+  background-color: #0AA8BE; // fallback for old browsers
+  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
+  background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
+  background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
+  -webkit-clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
+  clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
+  color: $white;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-top: $xxl;
+
+  .inset-1220 {
+    max-width: 1220px;
+  }
+
+  .section-title {
+    color: rgba(255,255,255,0.65);
+  }
+  .lead {
+    color: $white;
+  }
+}
