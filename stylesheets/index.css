@@ -104,6 +104,52 @@ nav {
     nav a:hover {
       color: #e6e6e6; }
 
+header.nav-only {
+  align-items: center;
+  background-color: #0AA8BE;
+  background-image: url("../images/nav_bg.png");
+  background-size: cover;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
+  text-align: center; }
+
+footer {
+  background-color: #01333B;
+  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
+  padding: 64px 32px 8px;
+  align-items: center;
+  display: flex;
+  flex-direction: column; }
+  footer div.inset-1220 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    footer div.inset-1220 .social-media p a {
+      color: #BFCED1;
+      font-size: 1.6em;
+      text-decoration: none;
+      margin-left: 4px; }
+      footer div.inset-1220 .social-media p a:hover {
+        color: #a1b7bc; }
+    footer div.inset-1220 .copyright p {
+      color: #BFCED1;
+      font-weight: 300;
+      font-size: 0.8em; }
+
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 120%; } }
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 100%; }
+
+  p.lead {
+    font-size: 1.5em; }
+
+  section {
+    padding: 32px 8px; } }
 header.hero {
   align-items: center;
   background-color: #0AA8BE;
@@ -135,8 +181,6 @@ header.hero {
     font-size: 26px;
     font-weight: bold;
     margin: 0; }
-header.nav-only {
-  background-image: url("../images/nav_bg.png"); }
 
 .service {
   align-items: center;
@@ -185,31 +229,6 @@ header.nav-only {
     .technologies-list li i.fa {
       font-size: 50px; }
 
-footer {
-  background-color: #01333B;
-  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
-  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
-  padding: 64px 32px 8px;
-  align-items: center;
-  display: flex;
-  flex-direction: column; }
-  footer div.inset-1220 {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%; }
-    footer div.inset-1220 .social-media p a {
-      color: #BFCED1;
-      font-size: 1.6em;
-      text-decoration: none;
-      margin-left: 4px; }
-      footer div.inset-1220 .social-media p a:hover {
-        color: #a1b7bc; }
-    footer div.inset-1220 .copyright p {
-      color: #BFCED1;
-      font-weight: 300;
-      font-size: 0.8em; }
-
 @media screen and (max-width: 1080px) {
   .service .service-description {
     padding: 32px 0 32px 32px; }
@@ -217,9 +236,6 @@ footer {
   .service.reverse .service-description {
     padding: 32px 32px 32px 0; } }
 @media screen and (max-width: 960px) {
-  body {
-    font-size: 120%; }
-
   header.hero .title {
     font-size: calc(24px + 10vw); }
   header.hero .subtitle {
@@ -246,12 +262,6 @@ footer {
       .service.reverse img {
         padding: 0; } }
 @media screen and (max-width: 600px) {
-  body {
-    font-size: 100%; }
-
-  p.lead {
-    font-size: 1.5em; }
-
   .technologies-list li {
     width: 102px; }
 
@@ -260,9 +270,6 @@ footer {
     text-align: center; }
 
   .service .service-description, .service.reverse .service-description {
-    font-size: 1.2em; }
+    font-size: 1.2em; } }
 
-  section {
-    padding: 32px 8px; } }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
