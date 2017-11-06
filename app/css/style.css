@@ -4,6 +4,12 @@ body {
   font-family: "Muli", sans-serif;
   color: #01161A;
   font-size: 137%; }
+  @media (max-width: 600px) {
+    body {
+      font-size: 120%; } }
+  @media (max-width: 960px) {
+    body {
+      font-size: 100%; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Oswald", sans-serif; }
@@ -14,6 +20,9 @@ p {
   p.lead {
     color: #01333B;
     font-size: 2em; }
+    @media (max-width: 960px) {
+      p.lead {
+        font-size: 1.5em; } }
 
 main {
   display: flex;
@@ -37,6 +46,9 @@ section {
     color: #D09E4B;
     font-size: 1.6em;
     text-transform: uppercase; }
+  @media (max-width: 960px) {
+    section {
+      padding: 32px 8px; } }
 
 .button {
   background-color: #C83600;
@@ -138,18 +150,6 @@ footer {
       font-weight: 300;
       font-size: 0.8em; }
 
-@media screen and (max-width: 960px) {
-  body {
-    font-size: 120%; } }
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 100%; }
-
-  p.lead {
-    font-size: 1.5em; }
-
-  section {
-    padding: 32px 8px; } }
 header.hero {
   align-items: center;
   background-color: #0AA8BE;
@@ -232,9 +232,9 @@ header.hero {
 @media screen and (max-width: 1080px) {
   .service .service-description {
     padding: 32px 0 32px 32px; }
-
   .service.reverse .service-description {
     padding: 32px 32px 32px 0; } }
+
 @media screen and (max-width: 960px) {
   header.hero .title {
     font-size: calc(24px + 10vw); }
@@ -242,6 +242,7 @@ header.hero {
     font-size: calc(16px + 2vw); }
   header.hero .lead {
     font-size: calc(14px + 1vw); } }
+
 @media screen and (max-width: 750px) {
   .service {
     flex-direction: column;
@@ -261,15 +262,12 @@ header.hero {
         padding: 0; }
       .service.reverse img {
         padding: 0; } }
+
 @media screen and (max-width: 600px) {
   .technologies-list li {
     width: 102px; }
-
   .specialties-list li {
     width: 180px;
     text-align: center; }
-
   .service .service-description, .service.reverse .service-description {
     font-size: 1.2em; } }
-
-/*# sourceMappingURL=index.css.map */
