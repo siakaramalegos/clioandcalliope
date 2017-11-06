@@ -103,12 +103,10 @@ nav {
     text-decoration: none; }
     nav a:hover {
       color: #e6e6e6; }
-  nav.stand-alone {
-    background-image: url("../images/hero_bg_1.png");
-    background-size: cover; }
 
 header.hero {
   align-items: center;
+  background-color: #0AA8BE;
   background-image: url("../images/hero_bg_1.png");
   background-size: cover;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
@@ -137,6 +135,8 @@ header.hero {
     font-size: 26px;
     font-weight: bold;
     margin: 0; }
+header.nav-only {
+  background-image: url("../images/nav_bg.png"); }
 
 .service {
   align-items: center;
