@@ -1,16 +1,20 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass'); // compiles scss to css
-var browserSync = require('browser-sync').create(); // hot reload
-var useref = require('gulp-useref'); // concatenates files
-var gulpIf = require('gulp-if'); // checks file type
-var uglify = require('gulp-uglify'); // minimizes JS
-var cssnano = require('gulp-cssnano'); // minimizes css
-var imagemin = require('gulp-imagemin'); // optimizes images
-var cache = require('gulp-cache'); // caches since images esp slow
-var del = require('del'); // deletes files
-var runSequence = require('run-sequence'); // run tasks in sequence
+const gulp = require('gulp');
+const sass = require('gulp-sass'); // compiles scss to css
+const browserSync = require('browser-sync').create(); // hot reload
+const useref = require('gulp-useref'); // concatenates files
+const gulpIf = require('gulp-if'); // checks file type
+const uglify = require('gulp-uglify'); // minimizes JS
+var postcss = require('gulp-postcss'); // post css processing
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+// const cssnano = require('gulp-cssnano'); // minimizes css
+// const autoprefixer = require('gulp-autoprefixer'); // adds vendor prefixes to css
+const imagemin = require('gulp-imagemin'); // optimizes images
+const cache = require('gulp-cache'); // caches since images esp slow
+const del = require('del'); // deletes files
+const runSequence = require('run-sequence'); // run tasks in sequence
 
 // Setting up browserSync to automatically reload on file changes
 gulp.task('browserSync', function () {
@@ -33,13 +37,20 @@ gulp.task('sass', function () {
 });
 
 // Grab html files and put into build folder
+// Pull out specified JS files and concat + uglify
+// Pull out specified CSS files and concat + autoprefix + minify
 gulp.task('useref', function () {
+  const plugins = [
+    autoprefixer({ browsers: ['last 2 versions'] }),
+    cssnano()
+  ];
+
   return gulp.src('app/*.html')
     .pipe(useref())
     // Uglify only JavaScript files
     .pipe(gulpIf('*.js', uglify()))
     // Minify only CSS files
-    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulpIf('*.css', postcss(plugins)))
     .pipe(gulp.dest('build'))
 });
 

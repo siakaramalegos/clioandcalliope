@@ -68,7 +68,6 @@ header.nav-only {
   background-color: #0AA8BE;
   background-image: url("../images/nav_bg.png");
   background-size: cover;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   text-align: center; }
 
@@ -77,7 +76,6 @@ header.hero {
   background-color: #0AA8BE;
   background-image: url("../images/hero_bg_1.png");
   background-size: cover;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
   display: flex;
   flex-direction: column;
@@ -126,10 +124,7 @@ section {
 
 section.gradient-fill {
   background-color: #0AA8BE;
-  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, color-stop(0%, #0aa8be), color-stop(100%, #2bbbae));
-  background-image: -webkit-linear-gradient(left bottom, #0aa8be 0%, #2bbbae 100%);
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
-  -webkit-clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   color: #FFFFFF;
   width: 100vw;
@@ -145,8 +140,6 @@ section.gradient-fill {
 .button {
   background-color: #C83600;
   border-radius: 2px;
-  -webkit-box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
   color: #FFFFFF;
   font-family: "Oswald", sans-serif;
@@ -159,7 +152,6 @@ section.gradient-fill {
 
 footer {
   background-color: #01333B;
-  -webkit-clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
   padding: 64px 32px 8px;
   align-items: center;
