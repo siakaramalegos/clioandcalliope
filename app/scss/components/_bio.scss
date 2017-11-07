@@ -1,0 +1,62 @@
+.bio {
+  display: flex;
+  margin: $lg 0;
+  justify-content: space-between;
+  width: 100%;
+
+  &.bio-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .bio-image {
+    box-sizing: border-box;
+    text-align: center;
+    width: 35%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .bio-description {
+    width: 61%;
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .bio-social {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline;
+      margin-right: $md;
+      font-size: 26px;
+      a {
+        color: $light-grey;
+        text-decoration: none;
+        &:hover {
+          color: darken($light-grey, 10%);
+        }
+      }
+    }
+  }
+  @include breakpoint(small-screen) {
+    display: block;
+    .bio-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+    }
+
+    .bio-description {
+      width: 100%;
+    }
+  }
+}
