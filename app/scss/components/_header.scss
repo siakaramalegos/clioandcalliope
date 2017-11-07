@@ -1,28 +1,24 @@
 header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
   &.nav-only {
-    align-items: center;
     background-color: #0AA8BE; // fallback for old browsers
     background-image: url("../images/nav_bg.png");
     background-size: cover;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
-    // display: flex;
-    // flex-direction: column;
-    // height: 60vh;
-    // min-height: 550px;
-    text-align: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 60%, 0% 100%);
+    height: 120px;
   }
 
   &.hero {
-    align-items: center;
     background-color: #0AA8BE; // fallback for old browsers
     background-image: url('../images/hero_bg_1.png');
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
-    display: flex;
-    flex-direction: column;
     height: 60vh;
     min-height: 550px;
-    text-align: center;
 
     .title {
       color: $white;
