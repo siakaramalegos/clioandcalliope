@@ -27,7 +27,6 @@ section.gradient-fill {
   background-color: #0AA8BE; // fallback for old browsers
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
   clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
-  color: $white;
   width: 100vw;
   box-sizing: border-box;
   padding-top: $xxl;
@@ -35,11 +34,46 @@ section.gradient-fill {
   .inset-1220 {
     max-width: 1220px;
   }
+}
 
+section.light-text {
+  color: $white;
   .section-title {
     color: rgba(255,255,255,0.65);
   }
   .lead {
     color: $white;
+  }
+}
+
+section.map-background {
+  background-color: #0AA8BE; // fallback for failed load
+  background-image: url("../images/map.png");
+  background-size: cover;
+  box-sizing: border-box;
+  clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 100%, 0% 100%);
+  margin-bottom: -50px;
+  padding: $xxl 0;
+  width: 100vw;
+
+  .contact {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: $xl 0;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      margin: $sm;
+
+      .fa {
+        margin-right: $md;
+      }
+
+      &:hover {
+        color: darken($color: $white, $amount: 10%);
+      }
+    }
   }
 }
