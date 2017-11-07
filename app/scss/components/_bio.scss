@@ -16,4 +16,22 @@
   .bio-description {
     width: 61%;
   }
+
+  .bio-social {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline;
+      margin-right: $md;
+      font-size: 26px;
+      a {
+        color: $light-grey;
+        text-decoration: none;
+        &:hover {
+          color: darken($light-grey, 10%);
+        }
+      }
+    }
+  }
 }

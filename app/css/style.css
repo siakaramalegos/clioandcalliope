@@ -186,6 +186,18 @@ footer {
       height: auto; }
   .bio .bio-description {
     width: 61%; }
+  .bio .bio-social {
+    list-style: none;
+    padding: 0; }
+    .bio .bio-social li {
+      display: inline;
+      margin-right: 16px;
+      font-size: 26px; }
+      .bio .bio-social li a {
+        color: #BFCED1;
+        text-decoration: none; }
+        .bio .bio-social li a:hover {
+          color: #a1b7bc; }
 
 .service {
   align-items: center;
