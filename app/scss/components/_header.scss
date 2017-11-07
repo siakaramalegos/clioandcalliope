@@ -20,18 +20,6 @@ header {
     height: 60vh;
     min-height: 550px;
 
-    .title {
-      color: $white;
-      font-family: $font-brand;
-      font-size: 150px;
-      font-weight: normal;
-      margin: $xl 0 0 0;
-      padding: 0;
-      // TODO: shadow not working
-      text-shadow: 0 2px 26px 0 rgba(0,0,0,0.18);
-      transform: rotate(715deg);
-    }
-
     .subtitle {
       font-family: 'Muli', sans-serif;
       font-size: 40px;

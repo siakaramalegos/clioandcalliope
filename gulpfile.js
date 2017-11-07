@@ -6,14 +6,14 @@ const browserSync = require('browser-sync').create(); // hot reload
 const useref = require('gulp-useref'); // concatenates files
 const gulpIf = require('gulp-if'); // checks file type
 const uglify = require('gulp-uglify'); // minimizes JS
-var postcss = require('gulp-postcss'); // post css processing
+const postcss = require('gulp-postcss'); // post css processing
 const autoprefixer = require('autoprefixer'); // adds vendor prefixes to css
 const cssnano = require('cssnano'); // minimizes css
 const imagemin = require('gulp-imagemin'); // optimizes images
 const cache = require('gulp-cache'); // caches since images esp slow
 const del = require('del'); // deletes files
 const runSequence = require('run-sequence'); // run tasks in sequence
-var ghPages = require('gulp-gh-pages');
+const ghPages = require('gulp-gh-pages');
 
 // Setting up browserSync to automatically reload on file changes
 gulp.task('browserSync', function () {
