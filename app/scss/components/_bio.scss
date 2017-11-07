@@ -4,7 +4,13 @@
   justify-content: space-between;
   width: 100%;
 
+  &.bio-reverse {
+    flex-direction: row-reverse;
+  }
+
   .bio-image {
+    box-sizing: border-box;
+    text-align: center;
     width: 35%;
 
     img {
@@ -15,6 +21,9 @@
 
   .bio-description {
     width: 61%;
+    h2 {
+      margin-top: 0;
+    }
   }
 
   .bio-social {
@@ -32,6 +41,22 @@
           color: darken($light-grey, 10%);
         }
       }
+    }
+  }
+  @include breakpoint(small-screen) {
+    display: block;
+    .bio-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+    }
+
+    .bio-description {
+      width: 100%;
     }
   }
 }

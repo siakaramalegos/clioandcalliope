@@ -2,14 +2,11 @@
 
 @mixin breakpoint($point) {
   @if $point == medium-screen {
-    @media (max-width: 600px) { @content; }
-  }
-  @else if $point == small-screen {
     @media (max-width: 960px) { @content; }
   }
-  // @else if $point == baby-bear {
-  //   @media (max-width: 650px)  { @content; }
-  // }
+  @else if $point == small-screen {
+    @media (max-width: 600px) { @content; }
+  }
 }
 
 // Helpers
