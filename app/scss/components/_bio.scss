@@ -1,0 +1,19 @@
+.bio {
+  display: flex;
+  margin: $xl 0;
+  justify-content: space-between;
+  width: 100%;
+
+  .bio-image {
+    width: 35%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .bio-description {
+    width: 61%;
+  }
+}
