@@ -4,6 +4,10 @@
   justify-content: space-between;
   width: 100%;
 
+  h2 {
+    color: $teal;
+  }
+
   &.bio-reverse {
     flex-direction: row-reverse;
   }
@@ -12,7 +16,6 @@
     box-sizing: border-box;
     text-align: center;
     width: 35%;
-
     img {
       max-width: 100%;
       height: auto;
@@ -29,7 +32,6 @@
   .bio-social {
     list-style: none;
     padding: 0;
-
     li {
       display: inline;
       margin-right: $md;
@@ -47,7 +49,6 @@
     display: block;
     .bio-image {
       width: 100%;
-
       img {
         width: 100%;
         max-width: 300px;
