@@ -49,7 +49,7 @@ gulp.task('useref', function () {
     .pipe(useref())
     // Uglify only JavaScript files
     .pipe(gulpIf('*.js', uglify()))
-    // Minify only CSS files
+    // Autoprefix and Minify only CSS files
     .pipe(gulpIf('*.css', postcss(plugins)))
     .pipe(gulp.dest('build'))
 });
