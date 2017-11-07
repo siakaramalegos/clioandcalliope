@@ -10,3 +10,5 @@ Now you can run the following tasks:
 
 - `gulp watch` runs a local server and serves up **app/index.html** at http://localhost:3000. It also automatically reloads when any files are changed.
 - `gulp build` prepares production-ready build in a **build/** folder. Open **build/index.html** in your browser to see the production code.
+
+**IMPORTANT**: Only edit code in the **app/** folder. The build folder's contents are deleted with every build so that code is never saved.
