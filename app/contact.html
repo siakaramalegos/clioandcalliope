@@ -17,7 +17,7 @@
   </script>
 
   <!-- Fonts: Google and Font Awesome -->
-  <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe|Muli:300,400,700|Oswald:500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Oswald:500" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Custom styles -->
   <!--build:css css/style.min.css-->
@@ -29,17 +29,23 @@
 
   <header class="nav-only">
     <nav>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#specialties">Specialties</a>
-      <a href="about.html">About</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="logo">
+        <img src="./images/logo_white.svg" alt="Clio and Calliope logo" height="auto" width="100%" style="max-width: 400px;padding: 16px;box-sizing:border-box;"
+        />
+      </a>
+      <div class="nav-links">
+        <a href="index.html#services">services</a>
+        <a href="index.html#specialties">specialties</a>
+        <a href="about.html">about</a>
+        <a href="#contact">contact</a>
+      </div>
     </nav>
   </header>
 
   <main>
 
     <!-- Contact us form section -->
-    <section id="contact" class="center inset-1220">
+    <section id="contact-form" class="center inset-1220">
       <h1 class="uppercase section-title">Contact us</h1>
       <p class="lead">Ready to start your next project with us? Fill out the form below, and we'll be in touch!</p>
       <p>FORM HERE</p>
@@ -47,20 +53,18 @@
 
 
     <!-- Map section -->
-    <section id="map" class="center inset-1220">
-      <p class="lead">We're located in beautiful New Orleans, but we work with clients anywhere. We'd love to hear from you!</p>
-      <div class="vertical-space-lg"></div>
-      <ul class="contact">
-        <li>
+    <section id="contact-info" class="map-background light-text center">
+      <div class="inset-1220">
+        <p class="lead">We're located in beautiful New Orleans, but we work with clients anywhere. We'd love to hear from you!</p>
+        <div class="contact">
           <a href="mailto:info@clioandcalliope.com">
             <i class="fa fa-envelope" aria-hidden="true"></i> info@clioandcalliope.com
           </a>
-        </li>
-        <li>
-          <i class="fa fa-phone" aria-hidden="true"></i> +1 504-405-1403
-        </li>
-      </ul>
-      <div class="vertical-space-xl"></div>
+          <a href="tel:+1-504-410-5005">
+            <i class="fa fa-phone" aria-hidden="true"></i> +1 504-410-5005
+          </a>
+        </div>
+      </div>
     </section>
     <!-- END Map section -->
   </main>
