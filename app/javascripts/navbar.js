@@ -1,9 +1,9 @@
 window.onload = function () {
   // Get the navbar
-  const navbar = document.getElementById("nav");
+  var navbar = document.getElementById("nav");
 
   // The offset position of the navbar
-  const appearAt = 550;
+  var appearAt = 550;
 
   // Add the sticky class to the navbar when you reach appearAt. Remove "sticky" when you leave the scroll position
   function stickyNavAppear() {

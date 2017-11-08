@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create(); // hot reload
 const useref = require('gulp-useref'); // concatenates files
 const gulpIf = require('gulp-if'); // checks file type
 const uglify = require('gulp-uglify'); // minimizes JS
+const util = require('gulp-util');
 const postcss = require('gulp-postcss'); // post css processing
 const autoprefixer = require('autoprefixer'); // adds vendor prefixes to css
 const cssnano = require('cssnano'); // minimizes css
@@ -47,7 +48,7 @@ gulp.task('useref', function () {
   return gulp.src('app/*.html')
     .pipe(useref())
     // Uglify only JavaScript files
-    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.js', uglify().on('error', util.log)))
     // Autoprefix and Minify only CSS files
     .pipe(gulpIf('*.css', postcss(plugins)))
     .pipe(gulp.dest('build'))
@@ -72,7 +73,8 @@ gulp.task('cache:clear', function (callback) {
 gulp.task('build', function (callback) {
   runSequence(
     'clean:build',
-    ['sass', 'useref', 'images'],
+    'sass',
+    ['useref', 'images'],
     callback
   )
 });
@@ -89,6 +91,6 @@ gulp.task('deploy', function () {
 gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
-  // gulp.watch('app/ja/**/*.js', browserSync.reload);
+  gulp.watch('app/javascripts/**/*.js', browserSync.reload);
 });
 
