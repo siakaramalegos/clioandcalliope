@@ -15,8 +15,12 @@ section {
 
   h2 {
     color: $mustard;
-    font-size: 1.6em;
-    text-transform: uppercase;
+    font-size: 1.8em;
+    margin-bottom: $sm;
+  }
+  h3 {
+    margin-top: 0;
+    color: $mint;
   }
   @include breakpoint(small-screen) {
     padding: $lg $sm;
