@@ -5,8 +5,26 @@
   display: flex;
   margin-bottom: $xl;
 
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+
   .service-description {
     padding: $lg $xxl $lg $lg;
+
+    @media screen and (max-width: 600px) {
+      font-size: 1.2em;
+    }
+    @media screen and (max-width: 750px) {
+      padding: 0;
+      max-width: 500px;
+    }
+    @media screen and (max-width: 1080px) {
+      padding: $lg 0 $lg $lg;
+    }
+
     h2 {
       margin: 16px 0;
     }
@@ -17,15 +35,39 @@
     height: auto;
     padding: 0 $md 0 0;
     width: 50%;
+
+    @media screen and (max-width: 750px) {
+      height: auto;
+      padding: 0;
+      max-width: 500px;
+      width: 100%;
+    }
   }
 
   &.reverse {
     flex-direction: row-reverse;
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+    }
+
     .service-description {
       padding: $lg $lg $lg $xxl;
+      @media screen and (max-width: 750px) {
+        padding: 0;
+      }
+      @media screen and (max-width: 600px) {
+        font-size: 1.2em;
+      }
+      @media screen and (max-width: 1080px) {
+        padding: $lg $lg $lg 0;
+      }
     }
+
     img {
       padding: 0 0 0 $md;
+      @media screen and (max-width: 750px) {
+        padding: 0;
+      }
     }
   }
 }
@@ -35,14 +77,37 @@
   display: flex;
   list-style: none;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0;
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
 
   li {
     box-sizing: border-box;
-    margin: $sm 0 0 $sm;
+    margin-top: $sm;
     line-height: $lg;
     text-align: center;
+    width: 50%;
+    text-align: center;
+
+    &:after {
+      content: "";
+      flex: auto;
+    }
+
+    @media screen and (min-width: 750px) {
+      width: 33.33333%;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1080px) {
+      width: 25%;
+      text-align: center;
+    }
   }
 }
 
@@ -61,118 +126,15 @@
     line-height: 42px;
     margin: $md;
     width: 140px;
+
+    @media screen and (max-width: 600px) {
+      width: 102px;
+    }
+
     i.fa {
       font-size: 50px;
     }
   }
 }
 
-@media screen and (min-width: 1080px) {
-  .specialties-list {
-    &:after {
-      content: "";
-      flex: auto;
-    }
-    li {
-      width: calc(25% - 8px);
-      text-align: center;
-    }
-  }
-}
-@media screen and (max-width: 1080px) {
-  .specialties-list {
-    &:after {
-      content: "";
-      flex: auto;
-    }
-    li {
-      width: calc(25% - 8px);
-      text-align: center;
-    }
-  }
-  .service .service-description {
-    padding: $lg 0 $lg $lg;
-  }
-  .service.reverse .service-description {
-    padding: $lg $lg $lg 0;
-  }
-}
 
-@media screen and (max-width: 960px) {
-  header.hero {
-    .title {
-      font-size: calc(24px + 10vw);
-    }
-    .subtitle {
-      font-size: calc(16px + 2vw);
-    }
-    .lead {
-      font-size: calc(14px + 1vw);
-    }
-  }
-  .specialties-list {
-    &:after {
-      content: "";
-      flex: auto;
-    }
-    li {
-      width: calc(33.33333% - 8px);
-      font-size: 0.9em;
-      text-align: center;
-    }
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .service {
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-
-    .service-description {
-      padding: 0;
-      max-width: 500px;
-    }
-
-    img {
-      height: auto;
-      padding: 0;
-      max-width: 500px;
-      width: 100%;
-    }
-
-    &.reverse {
-      flex-direction: column;
-      .service-description {
-        padding: 0;
-      }
-      img {
-        padding: 0;
-      }
-    }
-  }
-  .specialties-list {
-    &:after {
-      content: "";
-      flex: auto;
-    }
-    li {
-      width: calc(33.33333% - 8px);
-      font-size: 0.9em;
-      text-align: center;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .specialties-list li {
-    width: calc(50% - 8px);
-    text-align: center;
-  }
-  .technologies-list li {
-    width: 102px;
-  }
-  .service .service-description, .service.reverse .service-description {
-    font-size: 1.2em;
-  }
-}
