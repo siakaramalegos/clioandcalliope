@@ -3,7 +3,7 @@
 .service {
   align-items: center;
   display: flex;
-  margin-bottom: $xxl;
+  margin-bottom: $xl;
 
   .service-description {
     padding: $lg $xxl $lg $lg;
@@ -31,6 +31,7 @@
 }
 
 .specialties-list {
+  width: 100%;
   display: flex;
   list-style: none;
   flex-wrap: wrap;
@@ -38,15 +39,17 @@
   padding: 0;
 
   li {
-    width: 240px;
-    line-height: 42px;
+    box-sizing: border-box;
+    margin: $sm 0 0 $sm;
+    line-height: $lg;
+    text-align: center;
   }
 }
 
 .technologies-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   list-style: none;
   margin: $lg -16px $xl;
   padding: 0;
@@ -64,7 +67,29 @@
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .specialties-list {
+    &:after {
+      content: "";
+      flex: auto;
+    }
+    li {
+      width: calc(25% - 8px);
+      text-align: center;
+    }
+  }
+}
 @media screen and (max-width: 1080px) {
+  .specialties-list {
+    &:after {
+      content: "";
+      flex: auto;
+    }
+    li {
+      width: calc(25% - 8px);
+      text-align: center;
+    }
+  }
   .service .service-description {
     padding: $lg 0 $lg $lg;
   }
@@ -83,6 +108,17 @@
     }
     .lead {
       font-size: calc(14px + 1vw);
+    }
+  }
+  .specialties-list {
+    &:after {
+      content: "";
+      flex: auto;
+    }
+    li {
+      width: calc(33.33333% - 8px);
+      font-size: 0.9em;
+      text-align: center;
     }
   }
 }
@@ -115,15 +151,26 @@
       }
     }
   }
+  .specialties-list {
+    &:after {
+      content: "";
+      flex: auto;
+    }
+    li {
+      width: calc(33.33333% - 8px);
+      font-size: 0.9em;
+      text-align: center;
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .specialties-list li {
+    width: calc(50% - 8px);
+    text-align: center;
+  }
   .technologies-list li {
     width: 102px;
-  }
-  .specialties-list li {
-    width: 180px;
-    text-align: center;
   }
   .service .service-description, .service.reverse .service-description {
     font-size: 1.2em;

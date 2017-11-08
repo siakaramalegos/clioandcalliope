@@ -10,6 +10,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: darken($orange, 10%);
+    background-color: lighten($orange, 2%);
+    transition: background-color 500ms ease;
   }
 }
