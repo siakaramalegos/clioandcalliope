@@ -4,14 +4,6 @@ header {
   flex-direction: column;
   text-align: center;
 
-  &.nav-only {
-    background-color: #0AA8BE; // fallback for old browsers
-    background-image: url("../images/nav_bg.png");
-    background-size: cover;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 60%, 0% 100%);
-    height: 120px;
-  }
-
   &.hero {
     background-color: #0AA8BE; // fallback for old browsers
     background-image: url('../images/hero_bg_1.png');
@@ -33,12 +25,5 @@ header {
       font-weight: bold;
       margin: 0;
     }
-  }
-
-  &.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
   }
 }
