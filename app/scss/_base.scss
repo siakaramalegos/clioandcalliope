@@ -15,6 +15,7 @@
 .center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-md {height: $md;}
+.vertical-space-xl {height: $xl;}
 .inset-960 {max-width: 960px;}
 .inset-1220 {max-width: 1220px;}
 
@@ -36,7 +37,7 @@ body {
 
 h1 {
   font-family: $font-accent;
-  margin: $md;
+  margin: $md 0;
 }
 
 p {
