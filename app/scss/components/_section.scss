@@ -28,7 +28,7 @@ section {
 }
 
 section.gradient-fill {
-  background-color: #0AA8BE; // fallback for old browsers
+  background-color: $aqua; // fallback for old browsers
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
   clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   width: 100vw;
@@ -51,7 +51,7 @@ section.light-text {
 }
 
 section.map-background {
-  background-color: #0AA8BE; // fallback for failed load
+  background-color: $aqua; // fallback for failed load
   background-image: url("../images/map.png");
   background-size: cover;
   box-sizing: border-box;

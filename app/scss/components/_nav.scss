@@ -1,4 +1,5 @@
 // 5px border top on hover for not mobile
+// At 960, start scaling down logo
 .nav-container {
   align-items: center;
   display: flex;
@@ -11,7 +12,7 @@
   // for use in the transition of showing/hiding the navbar.
   &::after {
     content: "";
-    background-color: #0AA8BE; // fallback for old browsers
+    background-color: $aqua; // fallback for old browsers
     background-image: url("../images/nav_bg.png");
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 60%, 0% 100%);
@@ -82,16 +83,23 @@ nav {
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+
+// TODO: change to use mixin
+@media screen and (max-width: 750px) {
   .nav-container {
     overflow: visible;
-    // height: 100vh;
+    i {
+      font-size: 20px;
+    }
   }
   nav .nav-links {
     overflow-y: scroll;
     height: 100vh;
 
-    a {display: none;}
+    a {
+      display: none;
+      font-size: 16px;
+    }
     a.close-icon {
       display: block;
       position: absolute;
@@ -115,12 +123,9 @@ nav {
 
       a {
         background-color: rgba(0, 166, 191,0.9);
-        // color: $teal;
         float: none;
         display: block;
         text-align: left;
-        // padding: $sm $md;
-        // border-top: 1px solid $mint;
         border-bottom: 1px solid lighten($peacock, 8%);
 
         &:hover {
