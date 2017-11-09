@@ -8,6 +8,13 @@
   height: 120px;
   text-align: center;
 
+  @include breakpoint(medium-screen) {
+    .logo {
+      width: calc(160px + 10vw);
+    }
+  }
+
+
   // Have to use a pseudo class to get opacity to work on background image
   // for use in the transition of showing/hiding the navbar.
   &::after {
