@@ -98,13 +98,13 @@
       flex: auto;
     }
 
-    @media screen and (min-width: 750px) {
+    @include above(small-screen) {
       width: 33.33333%;
       font-size: 0.9em;
       text-align: center;
     }
 
-    @media screen and (min-width: 1080px) {
+    @include above(large-screen) {
       width: 25%;
       text-align: center;
     }
@@ -125,10 +125,10 @@
     flex-direction: column;
     line-height: 42px;
     margin: $md;
-    width: 140px;
+    width: 102px;
 
-    @media screen and (max-width: 600px) {
-      width: 102px;
+    @include above(small-screen) {
+      width: 140px;
     }
 
     i.fa {

@@ -1,11 +1,24 @@
 @import 'variables';
 
+// TODO: Remove this mix-in once everything is switched to 'above'
 @mixin breakpoint($point) {
   @if $point == medium-screen {
     @media (max-width: 960px) { @content; }
   }
   @else if $point == small-screen {
     @media (max-width: 600px) { @content; }
+  }
+}
+
+@mixin above($point) {
+  @if $point == small-screen {
+    @media (min-width: 750px) { @content; }
+  }
+  @else if $point == medium-screen {
+    @media (min-width: 960px) { @content; }
+  }
+  @else if $point == large-screen {
+    @media (min-width: 1080px) { @content; }
   }
 }
 
@@ -26,13 +39,14 @@ body {
   margin: 0;
   font-family: $font-primary;
   color: $black;
-  font-size: 137%;
-  @include breakpoint(medium-screen) {
+  font-size: 100%;
+  @include above(medium-screen) {
     font-size: 120%;
   }
-  @include breakpoint(small-screen) {
-    font-size: 100%;
+  @include above(large-screen) {
+    font-size: 137%;
   }
+
 }
 
 h1 {
