@@ -1,3 +1,59 @@
+.nav-container {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 120px;
+  text-align: center;
+
+  // Have to use a pseudo class to get opacity to work on background image
+  // for use in the transition of showing/hiding the navbar.
+  &::after {
+    content: "";
+    background-color: #0AA8BE; // fallback for old browsers
+    background-image: url("../images/nav_bg.png");
+    background-size: cover;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 60%, 0% 100%);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+    .is-open {
+      opacity: 1;
+      transition: opacity .2s ease-in-out .2s;
+    }
+
+    .is-closed {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: opacity .2s ease-in-out .2s;
+    }
+  }
+}
+
+.is-open {
+  transition: transform .2s ease-in-out .1s, opacity .2s ease-in-out .2s;
+}
+
+.is-closed {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform .2s ease-in-out .1s, opacity .2s ease-in-out .2s;
+}
+
+.sticky {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
