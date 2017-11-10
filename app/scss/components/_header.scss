@@ -25,5 +25,17 @@ header {
       font-weight: bold;
       margin: 0;
     }
+
+    @media screen and (max-width: 960px) {
+      .title {
+        font-size: calc(24px + 10vw);
+      }
+      .subtitle {
+        font-size: calc(16px + 2vw);
+      }
+      .lead {
+        font-size: calc(14px + 1vw);
+      }
+    }
   }
 }

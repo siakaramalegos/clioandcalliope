@@ -23,18 +23,20 @@ section {
     color: $mint;
   }
   @include breakpoint(small-screen) {
-    padding: $lg $sm;
+    padding: $lg $md;
   }
 }
 
 section.gradient-fill {
   background-color: $aqua; // fallback for old browsers
   background-image: linear-gradient(to right top, #0686ad 0%, #2bbbae 100%);
-  clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 92%, 50% 100%, 0% 92%);
   width: 100vw;
   box-sizing: border-box;
-  padding-top: $xxl;
-
+  padding-top: $xl;
+  clip-path: polygon(0% 0%, 50% 5%, 100% 0%, 100% 92%, 50% 98%, 0% 92%);
+  @media screen and (min-width: 1000px) {
+    clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 91%, 50% 100%, 0% 91%);
+  }
   .inset-1220 {
     max-width: 1220px;
   }
