@@ -89,6 +89,13 @@ main {
   justify-content: center;
 }
 
+.page-title {
+  padding-top: $xxl;
+  @include above(small-screen) {
+    padding-top: $xl;
+  }
+}
+
 
 // Components
 @import 'components/nav';
