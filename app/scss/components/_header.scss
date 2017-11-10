@@ -9,14 +9,40 @@ header {
     background-image: url('../images/hero_bg_1.png');
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
-    height: 60vh;
-    min-height: 550px;
+    height: 40vh;
+    min-height: 450px;
+
+    @include above(small-screen) {
+      min-height: 550px;
+    }
+
+    @include above(medium-screen) {
+      height: 55vh;
+    }
+
+    @include above(large-screen) {
+      height: 65vh;
+      min-height: 650px;
+    }
 
     .subtitle {
       font-family: 'Muli', sans-serif;
-      font-size: 40px;
-      padding: 0;
+      font-size: 1.7em;
+      padding: 0 $sm;
       margin: 0;
+      max-width: 400px;
+
+      @include above(small-screen) {
+        font-size: calc(16px + 2vw);
+        padding: 0 $xxl;
+        max-width: 550px;
+      }
+      @include above(medium-screen) {
+        max-width: 550px;
+      }
+      @include above(large-screen) {
+        max-width: 720px;
+      }
     }
 
     .lead {
@@ -24,17 +50,15 @@ header {
       font-size: 26px;
       font-weight: bold;
       margin: 0;
+
+      @include above(small-screen) {
+        font-size: calc(14px + 1vw);
+      }
     }
 
-    @media screen and (max-width: 960px) {
+    @include above(small-screen) {
       .title {
         font-size: calc(24px + 10vw);
-      }
-      .subtitle {
-        font-size: calc(16px + 2vw);
-      }
-      .lead {
-        font-size: calc(14px + 1vw);
       }
     }
   }

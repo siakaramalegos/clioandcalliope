@@ -15,14 +15,18 @@ form {
   input, textarea {
     border: 1px solid $mint;
     border-radius: 2px;
-    padding: $md;
+    color: lighten($color: $grey, $amount: 8%);
     font-size: 18px;
     font-weight: 300;
-    color: darken($color: $mint, $amount: 20%)
+    padding: $md;
+  }
+
+  input[type="submit"] {
+    border: 0;
   }
 
   input::placeholder {
-    color: $mint;
+    color: lighten($color: $mint, $amount: 8%);
   }
 
   textarea {

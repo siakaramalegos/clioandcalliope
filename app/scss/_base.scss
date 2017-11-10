@@ -1,15 +1,5 @@
 @import 'variables';
 
-// TODO: Remove this mix-in once everything is switched to 'above'
-@mixin breakpoint($point) {
-  @if $point == medium-screen {
-    @media (max-width: 960px) { @content; }
-  }
-  @else if $point == small-screen {
-    @media (max-width: 600px) { @content; }
-  }
-}
-
 @mixin above($point) {
   @if $point == small-screen {
     @media (min-width: 750px) { @content; }
@@ -28,6 +18,7 @@
 .center {text-align: center;}
 .vertical-space-sm {height: $sm;}
 .vertical-space-md {height: $md;}
+.vertical-space-lg {height: $lg;}
 .vertical-space-xl {height: $xl;}
 .inset-960 {max-width: 960px;}
 .inset-1220 {max-width: 1220px;}
@@ -61,16 +52,22 @@ p {
 
   &.lead {
     color: $teal;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 400;
     line-height: 1.5;
-    margin: $xl $sm $md $sm;
-    @include breakpoint(small-screen) {
-      font-size: 1.5em;
-      margin: $lg $md $sm $sm;
+    margin: $md $sm;
+
+    @include above(small-screen) {
+      font-size: 1.8em;
+      margin: 0 $lg $lg $lg;
     }
-    @media screen and (min-width: 1000px) {
-      margin: $xxl $xl $sm $sm;
+
+    @include above(medium-screen) {
+      margin: 0 $xl $sm $xl;
+    }
+
+    @include above(large-screen) {
+      margin: $lg $sm $sm $sm;
     }
   }
 }
@@ -80,7 +77,13 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 120px; // Size of navbar
+}
+
+.page-title {
+  padding-top: $xxl;
+  @include above(small-screen) {
+    padding-top: $xl;
+  }
 }
 
 

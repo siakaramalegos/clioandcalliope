@@ -1,8 +1,11 @@
 .bio {
-  display: flex;
+  display: block;
   margin: $lg 0;
   justify-content: space-between;
   width: 100%;
+  @include above(small-screen) {
+    display: flex;
+  }
 
   h2 {
     color: $teal;
@@ -15,15 +18,28 @@
   .bio-image {
     box-sizing: border-box;
     text-align: center;
-    width: 35%;
+    width: 100%;
+
+    @include above(small-screen) {
+      width: 35%;
+    }
+
     img {
-      max-width: 100%;
+      width: 100%;
+      max-width: 300px;
       height: auto;
+      @include above(small-screen) {
+        max-width: 100%;
+      }
     }
   }
 
   .bio-description {
-    width: 61%;
+    width: 100%;
+
+    @include above(small-screen) {
+      width: 61%;
+    }
     h2 {
       margin-top: 0;
     }
@@ -43,21 +59,6 @@
           color: darken($light-grey, 10%);
         }
       }
-    }
-  }
-  @include breakpoint(small-screen) {
-    display: block;
-    .bio-image {
-      width: 100%;
-      img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-      }
-    }
-
-    .bio-description {
-      width: 100%;
     }
   }
 }
