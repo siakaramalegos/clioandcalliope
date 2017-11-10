@@ -2,13 +2,18 @@ section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: $xl $lg;
+  padding: $lg $md;
   max-width: 100%;
+
+  @include above(small-screen) {
+    padding: $xl $lg;
+  }
 
   .section-title {
     color: $mint;
     font-size: 3.5em;
     font-weight: 500;
+    line-height: 1.2;
     opacity: 0.7;
     text-align: center;
   }
@@ -22,9 +27,6 @@ section {
     margin-top: 0;
     color: $mint;
   }
-  @include breakpoint(small-screen) {
-    padding: $lg $md;
-  }
 }
 
 section.gradient-fill {
@@ -34,11 +36,22 @@ section.gradient-fill {
   box-sizing: border-box;
   padding-top: $xl;
   clip-path: polygon(0% 0%, 50% 5%, 100% 0%, 100% 92%, 50% 98%, 0% 92%);
-  @media screen and (min-width: 1000px) {
+  @include above(large-screen) {
     clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 91%, 50% 100%, 0% 91%);
   }
   .inset-1220 {
     max-width: 1220px;
+  }
+  .lead {
+    margin: $lg 0;
+
+    @include above(small-screen) {
+      margin: $xl 0 $lg 0;
+    }
+    @include above(large-screen) {
+      margin: $xxl 0 $xl 0;
+    }
+
   }
 }
 
