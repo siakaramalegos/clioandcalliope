@@ -23,6 +23,11 @@
   <!--build:css css/style.min.css-->
   <link rel="stylesheet" href="./css/style.css">
   <!--endbuild-->
+
+  <!-- JavaScripts -->
+  <!--build:js javascripts/scripts.min.js-->
+  <script type="text/javascript" src="javascripts/hamburger.js" async></script>
+  <!--endbuild-->
 </head>
 
 <body>
@@ -32,12 +37,17 @@
         <img src="./images/logo_white.svg" alt="Clio and Calliope logo" height="auto" width="100%" style="max-width: 400px;padding: 16px;box-sizing:border-box;"
         />
       </a>
-      <div class="nav-links">
+      <a href="javascript:void(0);" class="open-icon">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </a>
+      <div class="nav-links hide-links">
+        <a href="javascript:void(0);" class="close-icon">
+          <span>&#x2715;</span>
+        </a>
         <a href="index.html">home</a>
         <a href="index.html#services">services</a>
-        <a href="index.html#specialties">specialties</a>
         <a href="about.html">about</a>
-        <a href="#contact">contact</a>
+        <a href="#" class="active">contact</a>
       </div>
     </nav>
   </div>

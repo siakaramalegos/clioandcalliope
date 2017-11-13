@@ -1,31 +1,8 @@
 window.onload = function () {
-  // NAVBAR APPEAR ON SCROLL (INDEX ONLY)
-  // Get the navbar
-  var navbar = document.getElementById("nav");
-
-  // The offset position of the navbar
-  var appearAt = 430;
-
-  // Add the sticky class to the navbar when you reach appearAt. Remove "sticky" when you leave the scroll position
-  function stickyNavAppear() {
-    if (window.pageYOffset >= appearAt) {
-      navbar.classList.add("is-open")
-      navbar.classList.remove("is-closed");
-    } else {
-      navbar.classList.remove("is-open");
-      navbar.classList.add("is-closed");
-    }
-  }
-
-  window.addEventListener('scroll', stickyNavAppear);
-
-
-
   // HAMBURGER FOR MOBILE
   var navLinkContainers = document.getElementsByClassName("nav-links");
   var closeIcons = document.getElementsByClassName("close-icon");
   var openIcons = document.getElementsByClassName("open-icon");
-  var samePageLinks = document.getElementsByClassName("same-page-link");
 
   function openHamburger() {
     // Show the navlinks
@@ -62,9 +39,5 @@ window.onload = function () {
   for (var i = 0; i < openIcons.length; i++) {
     var icon = openIcons[i];
     icon.addEventListener('click', openHamburger);
-  }
-  for (var i = 0; i < samePageLinks.length; i++) {
-    var link = samePageLinks[i];
-    link.addEventListener('click', closeHamburger);
   }
 }

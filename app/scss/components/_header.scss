@@ -5,7 +5,7 @@ header {
   text-align: center;
 
   &.hero {
-    background-color: #0AA8BE; // fallback for old browsers
+    background-color: $aqua; // fallback for old browsers
     background-image: url('../images/hero_bg_1.png');
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
