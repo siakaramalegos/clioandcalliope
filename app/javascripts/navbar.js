@@ -25,6 +25,7 @@ window.onload = function () {
   var navLinkContainers = document.getElementsByClassName("nav-links");
   var closeIcons = document.getElementsByClassName("close-icon");
   var openIcons = document.getElementsByClassName("open-icon");
+  var samePageLinks = document.getElementsByClassName("same-page-link");
 
   function openHamburger() {
     // Show the navlinks
@@ -61,5 +62,9 @@ window.onload = function () {
   for (var i = 0; i < openIcons.length; i++) {
     var icon = openIcons[i];
     icon.addEventListener('click', openHamburger);
+  }
+  for (var i = 0; i < samePageLinks.length; i++) {
+    var link = samePageLinks[i];
+    link.addEventListener('click', closeHamburger);
   }
 }

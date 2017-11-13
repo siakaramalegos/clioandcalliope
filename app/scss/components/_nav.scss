@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
   height: 120px;
   text-align: center;
 
@@ -23,12 +23,15 @@
     z-index: -1;
   }
 
-  @include breakpoint(medium-screen) {
-    .logo {width: calc(160px + 10vw);}
+  .logo {
+    width: calc(160px + 10vw);
+    @include above(medium-screen) {
+      width: auto;
+    }
   }
 
-  @media (max-width: 750px) {
-    overflow: visible;
+  @include above(small-screen) {
+    overflow: hidden;
   }
 }
 
@@ -56,20 +59,21 @@
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  height: 96px;
+  justify-content: space-between;
   max-width: 1220px;
   width: 100%;
-  height: 96px;
 
   // All link colors including hamburger
   a {
     color: $white;
+    font-size: 14px;
     padding: $default;
     text-decoration: none;
-    @include breakpoint(medium-screen) {
-      font-size: 14px;
+    @include above(medium-screen) {
+      font-size: 22px;
     }
   }
   a.active {color: lighten($light-grey, 10%);}
@@ -79,19 +83,48 @@ nav {
   i.fa {font-size: 20px;}
 }
 
-// Hide until get small enough
 .open-icon, .close-icon {
-  display: none;
+  display: none; // Hide both to hide close-icon
   position: absolute;
   top: 0;
   right: 0;
 }
 
-@media (max-width: 750px) {
-  .hero nav .nav-links {
-    z-index: 201;
+.open-icon {
+  display: block; // Show hamburger
+  @include above(small-screen) {
+    display: none;
   }
-  .open-icon {display: block;} // Show hamburger
+}
+
+.hero nav .nav-links {
+  z-index: 201;
+}
+
+.nav-links.hide-links {
+  opacity: 0.5;
+  transform: translateY(-100%);
+}
+.nav-links.show-links {
+  transition: transform .25s ease-in-out .1s, opacity .2s ease-in-out .2s;
+  a.close-icon {display: block;} // Show close icon
+}
+
+@include above(small-screen) {
+  .nav-links {
+    position: static;
+    width: auto;
+  }
+  .nav-links.hide-links {
+    opacity: 1;
+    transform: none;
+  }
+  .nav-links.show-links {
+    a.close-icon {display: none;} // hide close icon
+  }
+}
+
+@media (max-width: 750px) {
   .nav-links {
     box-sizing: border-box;
     overflow-y: scroll;
@@ -113,13 +146,5 @@ nav {
         color: $white;
       }
     }
-  }
-  .nav-links.hide-links {
-    opacity: 0.5;
-    transform: translateY(-100%);
-  }
-  .nav-links.show-links {
-    transition: transform .25s ease-in-out .1s, opacity .2s ease-in-out .2s;
-    a.close-icon {display: block;} // Show close icon
   }
 }
