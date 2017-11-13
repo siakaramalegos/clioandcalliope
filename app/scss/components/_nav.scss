@@ -72,6 +72,9 @@ nav {
     font-size: 14px;
     padding: $default;
     text-decoration: none;
+    @include above(small-screen) {
+      font-size: 16px;
+    }
     @include above(medium-screen) {
       font-size: 22px;
     }
@@ -83,67 +86,73 @@ nav {
   i.fa {font-size: 20px;}
 }
 
-.open-icon, .close-icon {
-  display: none; // Hide both to hide close-icon
-  position: absolute;
-  top: 0;
-  right: 0;
+.hero nav .nav-links {
+  z-index: 201;
 }
 
 .open-icon {
-  display: block; // Show hamburger
+  display: block; // Show hamburger icon
+  position: absolute;
+  top: 0;
+  right: 0;
   @include above(small-screen) {
     display: none;
   }
 }
 
-.hero nav .nav-links {
-  z-index: 201;
-}
+.nav-links {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 200;
 
-.nav-links.hide-links {
-  opacity: 0.5;
-  transform: translateY(-100%);
-}
-.nav-links.show-links {
-  transition: transform .25s ease-in-out .1s, opacity .2s ease-in-out .2s;
-  a.close-icon {display: block;} // Show close icon
-}
+  &.hide-links {
+    opacity: 0.5;
+    transform: translateY(-100%);
+  }
+  &.show-links {
+    transition: transform .25s ease-in-out .1s, opacity .2s ease-in-out .2s;
+    a.close-icon {display: block;} // Show close icon
+  }
 
-@include above(small-screen) {
-  .nav-links {
+  a {
+    background-color: rgba(0, 166, 191,0.9);
+    border-bottom: 1px solid lighten($peacock, 8%);
+    display: block;
+    float: none;
+    text-align: left;
+    &.close-icon {
+      display: none; // Hide close-icon
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &:hover {
+      background-color: lighten(rgba(0, 166, 191,0.9), 5%);
+      color: $white;
+    }
+  }
+
+  @include above(small-screen) {
+    overflow-y: hidden;
     position: static;
     width: auto;
-  }
-  .nav-links.hide-links {
-    opacity: 1;
-    transform: none;
-  }
-  .nav-links.show-links {
-    a.close-icon {display: none;} // hide close icon
-  }
-}
-
-@media (max-width: 750px) {
-  .nav-links {
-    box-sizing: border-box;
-    overflow-y: scroll;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    z-index: 200;
+    &.hide-links {
+      opacity: 1;
+      transform: none;
+    }
+    &.show-links a.close-icon {display: none;} // hide close icon
     a {
-      background-color: rgba(0, 166, 191,0.9);
-      float: none;
-      font-size: 16px;
-      display: block;
-      text-align: left;
-      border-bottom: 1px solid lighten($peacock, 8%);
-
+      background-color: transparent;
+      border-bottom: none;
+      display: inline;
+      &.close-icon {display: none;}
       &:hover {
-        background-color: lighten(rgba(0, 166, 191,0.9), 5%);
-        color: $white;
+        background-color: transparent;
+        color: lighten($mustard, 10%);
       }
     }
   }
