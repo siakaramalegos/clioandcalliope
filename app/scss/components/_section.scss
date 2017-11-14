@@ -67,7 +67,7 @@ section.light-text {
 
 section.map-background {
   background-color: $aqua; // fallback for failed load
-  background-image: url("../images/map.png");
+  background-image: url("../images/map.jpg");
   background-size: cover;
   box-sizing: border-box;
   clip-path: polygon(0% 0%, 50% 8%, 100% 0%, 100% 100%, 0% 100%);
