@@ -54,11 +54,17 @@ gulp.task('useref', function () {
     .pipe(gulp.dest('build'))
 });
 
+// Copy already minimized library scripts
+gulp.task('copyLib', function () {
+  return gulp.src('./app/lib/*.min.js')
+    .pipe(gulp.dest('/build/lib/'))
+})
+
 // Optimize images and cache them while doing so
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('./app/images/**/*.+(png|jpg|gif|svg)')
     .pipe(cache(imagemin()))
-    .pipe(gulp.dest('build/images'))
+    .pipe(gulp.dest('/build/images'))
 });
 
 // Delete build files
@@ -74,7 +80,7 @@ gulp.task('build', function (callback) {
   runSequence(
     'clean:build',
     'sass',
-    ['useref', 'images'],
+    ['useref', 'images', 'copyLib'],
     callback
   )
 });

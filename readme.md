@@ -13,3 +13,5 @@ Now you can run the following tasks:
 - `gulp deploy` deploys the current **build/** to the `gh-pages` branch and pushes it to Github. You can then see it at https://siakaramalegos.github.io/clioandcalliope/.
 
 **IMPORTANT**: Only edit code in the **app/** folder. The build folder's contents are deleted with every build so that code is never saved.
+
+If you get an error like `Error: EACCES: permission denied, mkdir '/build'` when trying to run `gulp build`, preface it with `sudo` instead: `sudo gulp build`. You will have to enter the admin password on your computer.
