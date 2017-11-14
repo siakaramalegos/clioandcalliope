@@ -15,3 +15,7 @@ Now you can run the following tasks:
 **IMPORTANT**: Only edit code in the **app/** folder. The build folder's contents are deleted with every build so that code is never saved.
 
 If you get an error like `Error: EACCES: permission denied, mkdir '/build'` when trying to run `gulp build`, preface it with `sudo` instead: `sudo gulp build`. You will have to enter the admin password on your computer.
+
+### Webpack
+
+- `npm run build` creates the build files for production
