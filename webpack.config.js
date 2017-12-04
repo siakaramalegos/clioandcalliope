@@ -1,6 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
@@ -12,7 +11,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/clioandcalliope/',
   },
   module: {
     rules: [
@@ -66,14 +66,18 @@ module.exports = {
             options: { minimize: true }
           },
         ]
+      },
+      {
+        test: /\.ico$/,
+        exclude: [nodeModulesPath],
+        use: [
+          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+        ]
       }
     ]
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
     new CleanWebpackPlugin(['build']),
-    // new HtmlWebpackPlugin({
-    //   title: 'Output Management'
-    // })
   ]
 }
