@@ -1,3 +1,5 @@
+require('../scss/style.scss')
+require('../index.html');
 const gumshoe = require('../lib/gumshoe.min.js')
 const SmoothScroll = require('../lib/smooth-scroll.polyfills.min.js')
 
