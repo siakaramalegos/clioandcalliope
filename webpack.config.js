@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
+// css and js are both automatically minified/uglified when running webpack -p
 module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: {
@@ -26,18 +27,30 @@ module.exports = {
             { loader: 'resolve-url-loader', options: { keepQuery: true } },
             { loader: 'sass-loader', options: { sourceMap: true } },
           ],
-          // filename: 'css/[name].[ext]'
         })
       },
+      // Images - inline if less than 8K, load files, optimize them
       {
         test: /\.(png|svg|jpg|gif)$/,
         exclude: [nodeModulesPath],
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'images/[name].[hash].[ext]',
-          }
-        },
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              // default fallback is file-loader
+              limit: 8000,
+              name: 'images/[name].[hash].[ext]',
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+              optipng: { optimizationLevel: 3 },
+              pngquant: { enabled: false },
+            }
+          },
+        ],
       },
       {
         test: /\.html$/,
