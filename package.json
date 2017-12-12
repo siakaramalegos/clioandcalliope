@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
-    "deploy": "gh-pages -d build"
+    "start": "webpack-dev-server --env development",
+    "build": "NODE_ENV=production webpack --optimize-minimize --env production",
+    "staging": "NODE_ENV=staging webpack --optimize-minimize --env staging && gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,9 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {}
 }
