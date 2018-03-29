@@ -9,7 +9,7 @@ const config = require(path.join(__dirname, 'config', environment))
 const merge = require('webpack-merge')
 const parts = require("./webpack.parts");
 
-// CSS, JS, and HTML are automatically minified/uglified when running webpack -p
+// CSS, JS, and HTML are automatically minified/uglified when running build and deploy scripts
 
 const commonConfig = merge([{
   context: path.resolve(__dirname, 'app'),
