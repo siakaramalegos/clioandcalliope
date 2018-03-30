@@ -3,6 +3,7 @@ require('../index.html');
 require('../about.html');
 require('../contact.html');
 require('../favicon.ico');
+require('../static/share_image.jpg');
 const gumshoe = require('../lib/gumshoe.min.js')
 const SmoothScroll = require('../lib/smooth-scroll.polyfills.min.js')
 
