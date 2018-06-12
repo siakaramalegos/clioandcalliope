@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const staticPath = path.resolve(__dirname, 'app/static/');
 const environment = process.env.NODE_ENV || 'development'
 // Define different configurations by environment
 const config = require(path.join(__dirname, 'config', environment))
@@ -36,10 +37,21 @@ const commonConfig = merge([{
           ],
         })
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        include: [staticPath],
+        exclude: [nodeModulesPath],
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'static/[name].[ext]' }
+          },
+        ],
+      },
       // Images - inline if less than 8K, load files, optimize them
       {
         test: /\.(png|svg|jpg|gif)$/,
-        exclude: [nodeModulesPath],
+        exclude: [nodeModulesPath, staticPath],
         use: [
           {
             loader: 'url-loader', // default fallback is file-loader
