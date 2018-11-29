@@ -8,7 +8,7 @@
   }
 
   h2 {
-    color: $teal;
+    color: $cerulean-700;
   }
 
   &.bio-reverse {
@@ -51,12 +51,12 @@
     li {
       display: inline;
       margin-right: $md;
-      font-size: 26px;
+      font-size: 30px;
       a {
-        color: $light-grey;
+        color: $tomato-400;
         text-decoration: none;
         &:hover {
-          color: darken($light-grey, 10%);
+          color: lighten($tomato-400, 2%);
         }
       }
     }

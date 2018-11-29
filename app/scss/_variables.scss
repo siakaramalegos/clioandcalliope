@@ -2,17 +2,21 @@
 $font-primary: 'Muli', sans-serif;
 $font-accent: 'Oswald', sans-serif;
 
-// Colors
+// Colors off palette
 $white: #FFFFFF;
-$light-grey: #BFCED1;
 $grey: #374142;
 $black: #01161A;
-$mint: #9EBCC0;
-$teal: #01333B;
-$orange: #C83600;
-$mustard: #D09E4B;
 $peacock: #00A6BF; // 0, 166, 191
 $aqua: #0AA8BE;
+
+// Colors from palette
+$cerulean-700: #024452;
+$cerulean-800: #012c36;
+$jade-500: #2bbbae;
+$jade-600: #168A80;
+$blue-grey-500: #9ebcc0;
+$tomato-400: #C83600;
+$honey-600: #bf8f00;
 
 // Space
 $default: 16px;

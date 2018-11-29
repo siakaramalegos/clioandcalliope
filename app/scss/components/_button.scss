@@ -1,5 +1,5 @@
 .button {
-  background-color: $orange;
+  background-color: $tomato-400;
   border-radius: 2px;
   box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
   color: $white;
@@ -10,7 +10,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: lighten($orange, 2%);
+    background-color: lighten($tomato-400, 2%);
     transition: background-color 500ms ease;
   }
 }
