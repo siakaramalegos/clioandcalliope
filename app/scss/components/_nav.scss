@@ -79,8 +79,8 @@ nav {
       font-size: 22px;
     }
   }
-  a.active {color: lighten($light-grey, 10%);}
-  a:hover {color: lighten($mustard, 10%);}
+  a.active {color: lighten($blue-grey-500, 10%);}
+  a:hover {color: lighten($honey-600, 10%);}
   a.hide{display: none;}
   // Make hamburger a little larger
   i.fa {font-size: 20px;}
@@ -152,7 +152,7 @@ nav {
       &.close-icon {display: none;}
       &:hover {
         background-color: transparent;
-        color: lighten($mustard, 10%);
+        color: lighten($honey-600, 10%);
       }
     }
   }

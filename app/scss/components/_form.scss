@@ -8,14 +8,14 @@ form {
   width: 100%;
 
   label {
-    color: $teal;
+    color: $cerulean-700;
     padding: $lg 0 $sm;
   }
 
   input, textarea {
-    border: 1px solid $mint;
+    border: 1px solid $blue-grey-500;
     border-radius: 2px;
-    color: lighten($color: $grey, $amount: 8%);
+    color: $grey;
     font-size: 18px;
     font-weight: 300;
     padding: $md;
@@ -26,7 +26,7 @@ form {
   }
 
   input::placeholder {
-    color: lighten($color: $mint, $amount: 8%);
+    color: $blue-grey-500;
   }
 
   textarea {
