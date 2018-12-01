@@ -84,13 +84,16 @@ section.map-background {
       color: $white;
       text-decoration: none;
       margin: $sm;
-
-      .fa {
+      .icon {
+        position: relative;
+        top: 3px;
         margin-right: $md;
       }
-
       &:hover {
         color: darken($color: $white, $amount: 10%);
+        .icon path {
+          fill: darken($color: $white, $amount: 10%);
+        }
       }
     }
   }
