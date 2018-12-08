@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --env development",
-    "build": "NODE_ENV=production webpack --optimize-minimize --env production",
-    "staging": "NODE_ENV=staging webpack --optimize-minimize --env staging && gh-pages -d build"
+    "start": "webpack-dev-server --env development --mode=development",
+    "build": "NODE_ENV=production webpack --optimize-minimize --env production --mode=production",
+    "staging": "NODE_ENV=staging webpack --optimize-minimize --env staging --mode=production && gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -25,21 +25,23 @@
     "autoprefixer": "^7.2.1",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
-    "extract-loader": "^1.0.1",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "gh-pages": "^1.1.0",
     "html-loader": "^0.5.1",
-    "image-webpack-loader": "^3.4.2",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",
     "resolve-url-loader": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.7",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "extract-loader": "^3.1.0"
+  }
 }
