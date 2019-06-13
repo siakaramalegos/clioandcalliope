@@ -17,9 +17,18 @@ footer {
       font-size: 1.6em;
       text-decoration: none;
       margin-left: $xs;
-
+      .icon {
+        height: 35px;
+        width: 35px;
+      }
+      .icon path {
+        fill: $blue-grey-500;
+      }
       &:hover {
         color: darken($color: $blue-grey-500, $amount: 10%);
+        .icon path {
+          fill: darken($color: $blue-grey-500, $amount: 10%);
+        }
       }
     }
 

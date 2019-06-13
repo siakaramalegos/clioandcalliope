@@ -15,7 +15,8 @@ const parts = require("./webpack.parts");
 const commonConfig = merge([{
   context: path.resolve(__dirname, 'app'),
   entry: {
-    index: './javascripts/index.js'
+    index: './javascripts/index.js',
+    base: './javascripts/base.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -80,7 +81,20 @@ const commonConfig = merge([{
         test: /\.ico$/,
         exclude: [nodeModulesPath],
         use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }]
-      }
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            // Limit at 50k. Above that it emits separate files
+            limit: 50000,
+
+            // Output below fonts directory
+            name: "./fonts/[name].[ext]",
+          }
+        },
+      },
     ]
   },
   plugins: [
