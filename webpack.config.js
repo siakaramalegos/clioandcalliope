@@ -15,7 +15,8 @@ const parts = require("./webpack.parts");
 const commonConfig = merge([{
   context: path.resolve(__dirname, 'app'),
   entry: {
-    index: './javascripts/index.js'
+    index: './javascripts/index.js',
+    base: './javascripts/base.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
