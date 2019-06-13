@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --env development",
-    "build": "NODE_ENV=production webpack --optimize-minimize --env production",
-    "staging": "NODE_ENV=staging webpack --optimize-minimize --env staging && gh-pages -d build"
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "rm -rf build && webpack -p",
+    "staging": "NODE_ENV=staging webpack --optimize-minimize && gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,28 +18,36 @@
     "url": "https://github.com/siakaramalegos/clioandcalliope/issues"
   },
   "homepage": "https://github.com/siakaramalegos/clioandcalliope#readme",
-  "browserslist": [
-    "last 2 versions"
-  ],
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^0.28.11",
-    "extract-loader": "^1.0.2",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.11",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "compression-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
     "gh-pages": "^1.2.0",
-    "html-loader": "^0.5.5",
-    "image-webpack-loader": "^3.6.0",
+    "html-loader-srcset": "^0.5.6",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
-    "postcss-loader": "^2.1.6",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^2.3.2",
     "sass-loader": "^6.0.7",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.5",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.3.0",
+    "webpack": "^4.34.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "gumshoejs": "^5.1.1",
+    "smooth-scroll": "^16.1.0"
+  }
 }
