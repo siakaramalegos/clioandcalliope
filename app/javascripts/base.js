@@ -8,6 +8,4 @@ require('../static/share_image@2x.jpg');
 require('../static/share_image@3x.jpg');
 import hamburger from './hamburger'
 
-window.onload = function () {
-  hamburger()
-}
+hamburger()

@@ -1,7 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const staticPath = path.resolve(__dirname, 'app/static/');
 const environment = process.env.NODE_ENV || 'development'
@@ -26,20 +30,32 @@ const commonConfig = merge([{
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { sourceMap: true } },
-            // config in postcss.config.js and browserslist in package.json
-            { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'resolve-url-loader', options: { keepQuery: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
-          ],
-        })
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader-srcset',
+          options: {
+            attrs: ['img:src', 'img:srcset', 'source:srcset', ':data-src', ':data-srcset']
+          }
+        }
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.m?js$/,
+        exclude: [/node_modules/],
+        use: ['babel-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: true } },
+          // config in postcss.config.js and browserslist in package.json
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'resolve-url-loader', options: { keepQuery: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif|webp)$/,
         include: [staticPath],
         exclude: [nodeModulesPath],
         use: [
@@ -49,33 +65,15 @@ const commonConfig = merge([{
           },
         ],
       },
-      // Images - inline if less than 8K, load files, optimize them
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|webp)$/,
         exclude: [nodeModulesPath, staticPath],
         use: [
           {
-            loader: 'url-loader', // default fallback is file-loader
-            options: { limit: 8000, name: 'images/[name].[hash].[ext]', }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              optipng: { optimizationLevel: 3 },
-              pngquant: { enabled: false },
-            }
+            loader: 'file-loader',
+            options: { name: 'images/[name].[hash].[ext]', }
           },
         ],
-      },
-      {
-        test: /\.html$/,
-        exclude: [nodeModulesPath],
-        use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' } },
-          'extract-loader',
-          { loader: 'html-loader', options: { minimize: true } },
-        ]
       },
       {
         test: /\.ico$/,
@@ -97,16 +95,39 @@ const commonConfig = merge([{
       },
     ]
   },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
   plugins: [
-    new ExtractTextPlugin('style.css'),
-    new CleanWebpackPlugin(['build']),
-    // This makes it possible for us to safely use env vars on our code
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-      },
-    })
-  ]
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: 'static',
+      logLevel: 'warn'
+    }),
+    new HtmlWebpackPlugin({
+      // inject: false,
+      chunks: ['index'],
+      filename: 'index.html',
+      template: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      // inject: false,
+      chunks: ['base'],
+      filename: 'about.html',
+      template: 'about.html',
+    }),
+    new HtmlWebpackPlugin({
+      // inject: false,
+      chunks: ['base'],
+      filename: 'contact.html',
+      template: 'contact.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+    }),
+    new CompressionPlugin(),
+  ],
+  devtool: process.env.NODE_ENV === 'production' ? 'none' : 'source-map',
 }])
 
 const developmentConfig = merge([
