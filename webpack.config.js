@@ -48,7 +48,7 @@ const commonConfig = merge([{
         use: [
           MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: true } },
-          // config in postcss.config.js and browserslist in package.json
+          // config in postcss.config.js and .browserslistrc
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'resolve-url-loader', options: { keepQuery: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
