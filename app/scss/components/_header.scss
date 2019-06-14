@@ -34,7 +34,6 @@ header {
 
       @include above(small-screen) {
         font-size: 30px;
-        padding: 0 $xxl;
       }
       @include above(large-screen) {
         font-size: 42px;
