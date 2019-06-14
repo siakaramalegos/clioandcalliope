@@ -10,49 +10,52 @@ header {
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%, 0% 100%);
     height: 40vh;
-    min-height: 450px;
+    min-height: 550px;
 
     @include above(small-screen) {
-      min-height: 550px;
+      min-height: 600px;
     }
 
     @include above(medium-screen) {
-      height: 55vh;
+      height: 70vh;
+      min-height: 650px;
     }
 
     @include above(large-screen) {
-      height: 65vh;
-      min-height: 650px;
+      height: 80vh;
+      min-height: 800px;
     }
 
     .subtitle {
       font-family: 'Muli', sans-serif;
-      font-size: 1.7em;
+      font-size: 24px;
       padding: 0 $sm;
       margin: 0;
-      max-width: 400px;
+      width: 90%;
 
       @include above(small-screen) {
-        font-size: calc(16px + 2vw);
+        font-size: 30px;
         padding: 0 $xxl;
-        max-width: 550px;
-      }
-      @include above(medium-screen) {
-        max-width: 550px;
       }
       @include above(large-screen) {
-        max-width: 720px;
+        font-size: 42px;
       }
     }
 
     .lead {
-      color: $white;
-      font-size: 26px;
-      font-weight: bold;
-      margin: 0;
+      color: #01333B;
+      font-size: 20px;
+      margin: 18px 0 30px 0;
+      max-width: 668px;
+      width: 90%;
 
       @include above(small-screen) {
-        font-size: calc(14px + 1vw);
+        line-height: 30px;
+        font-size: 22px;
+      }
+      @include above(large-screen) {
+        line-height: 44px;
+        font-size: 28px;
       }
     }
 

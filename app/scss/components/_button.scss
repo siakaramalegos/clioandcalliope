@@ -4,13 +4,18 @@
   box-shadow: 0 3px 20px 3px rgba(0,0,0,0.1);
   color: $white;
   font-family: $font-accent;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  padding: $md $lg;
+  padding: $sm $md;
   text-decoration: none;
 
   &:hover {
     background-color: lighten($tomato-400, 2%);
     transition: background-color 500ms ease;
+  }
+
+  @include above(medium-screen) {
+    font-size: 24px;
+    padding: $md $lg;
   }
 }
