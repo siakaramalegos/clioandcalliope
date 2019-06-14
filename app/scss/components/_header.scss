@@ -22,7 +22,6 @@ header {
     }
 
     @include above(large-screen) {
-      height: 80vh;
       min-height: 800px;
     }
 
