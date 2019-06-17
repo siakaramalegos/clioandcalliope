@@ -25,6 +25,8 @@
     }
 
     img {
+      border-radius: 50%;
+      filter: drop-shadow(0 0 10px #bbb);
       width: 100%;
       max-width: 300px;
       height: auto;
