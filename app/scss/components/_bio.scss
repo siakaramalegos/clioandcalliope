@@ -17,6 +17,8 @@
 
   .bio-image {
     box-sizing: border-box;
+    max-height: 427px;
+    position: relative;
     text-align: center;
     width: 100%;
 
@@ -24,7 +26,7 @@
       width: 35%;
     }
 
-    img {
+    img.headshot {
       border-radius: 50%;
       filter: drop-shadow(0 0 10px #bbb);
       width: 100%;
@@ -33,6 +35,13 @@
       @include above(small-screen) {
         max-width: 100%;
       }
+    }
+    img.badge {
+      bottom: 0;
+      filter: drop-shadow(0 0 10px #bbb);
+      position: absolute;
+      right: 10px;
+      width: 100px;
     }
   }
 
