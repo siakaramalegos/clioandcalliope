@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "rm -rf build && webpack -p",
+    "netlify-build": "webpack -p",
     "staging": "NODE_ENV=staging webpack --optimize-minimize && gh-pages -d build"
   },
   "repository": {
