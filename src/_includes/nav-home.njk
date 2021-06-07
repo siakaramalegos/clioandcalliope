@@ -1,0 +1,92 @@
+<div id="nav" class="nav-container is-closed sticky" data-gumshoe-header>
+  <nav role="navigation">
+    <a href="#" class="logo" data-scroll>
+      <img src="./images/logo_white.svg" alt="Clio and Calliope home" height="auto" width="100%" style="max-width: 400px;padding: 16px;box-sizing:border-box;"
+      />
+    </a>
+    <a href="javascript:void(0);" class="open-icon" aria-expanded="false" aria-controls="menu">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="20px" width="20px"
+        aria-label="Menu">
+        <path fill="#fff"
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+      </svg>
+    </a>
+    <div class="nav-links hide-links" id="menu">
+      <a href="javascript:void(0);" class="close-icon" aria-expanded="true" aria-controls="menu">
+        <span aria-label="Close menu">&#x2715;</span>
+      </a>
+      <a href="/#services" class="same-page-link">services</a>
+      <a href="/about">about</a>
+      <a href="/contact">contact</a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  // HAMBURGER FOR MOBILE
+  var navLinkContainers = document.getElementsByClassName("nav-links");
+  var closeIcons = document.getElementsByClassName("close-icon");
+  var openIcons = document.getElementsByClassName("open-icon");
+  var samePageLinks = document.getElementsByClassName("same-page-link");
+
+  function openHamburger() {
+    // Show the navlinks
+    for (var i = 0; i < navLinkContainers.length; i++) {
+      var element = navLinkContainers[i]
+      element.classList.add("show-links");
+      element.classList.remove("hide-links");
+    }
+    // Hide the hamburger
+    for (var i = 0; i < openIcons.length; i++) {
+      var icon = openIcons[i];
+      icon.classList.add('hide');
+    }
+  }
+
+  function closeHamburger() {
+    // Hide the navlinks
+    for (var i = 0; i < navLinkContainers.length; i++) {
+      var element = navLinkContainers[i]
+      element.classList.add("hide-links");
+      element.classList.remove("show-links");
+    }
+    // Show the hamburger
+    for (var i = 0; i < openIcons.length; i++) {
+      var icon = openIcons[i];
+      icon.classList.remove('hide');
+    }
+  }
+
+  for (var i = 0; i < closeIcons.length; i++) {
+    var icon = closeIcons[i];
+    icon.addEventListener('click', closeHamburger);
+  }
+  for (var i = 0; i < openIcons.length; i++) {
+    var icon = openIcons[i];
+    icon.addEventListener('click', openHamburger);
+  }
+  for (var i = 0; i < samePageLinks.length; i++) {
+    var link = samePageLinks[i];
+    link.addEventListener('click', closeHamburger);
+  }
+
+  // NAVBAR APPEAR ON SCROLL (INDEX ONLY)
+  // Get the navbar
+  var navbar = document.getElementById("nav");
+
+  // The offset position of the navbar
+  var appearAt = 430;
+
+  // Add the sticky class to the navbar when you reach appearAt. Remove "sticky" when you leave the scroll position
+  function stickyNavAppear() {
+    if (window.pageYOffset >= appearAt) {
+      navbar.classList.add("is-open")
+      navbar.classList.remove("is-closed");
+    } else {
+      navbar.classList.remove("is-open");
+      navbar.classList.add("is-closed");
+    }
+  }
+
+  window.addEventListener('scroll', stickyNavAppear);
+</script>

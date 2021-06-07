@@ -95,7 +95,7 @@ body {
 }
 
 h1 {
-  font-family: var(--font-primary);
+  font-family: var(--font-accent);
   margin: var(--md) 0;
 }
 
@@ -421,6 +421,7 @@ form input, form textarea {
   border: 1px solid var(--blue-grey-500);
   border-radius: 2px;
   color: var(--grey);
+  font-family: var(--font-primary);
   font-size: 18px;
   font-weight: 300;
   padding: var(--md);
