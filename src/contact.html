@@ -6,7 +6,7 @@ layout: layouts/base.njk
 <section id="contact-form" class="center inset-960">
   <h1 class="uppercase section-title page-title">Contact us</h1>
   <p class="lead">Ready to start your next project with us? Fill out the form below, and we'll be in touch!</p>
-  <form action="https://formspree.io/info@clioandcalliope.com" method="POST">
+  <form data-netlify="true" method="POST" name="contact" netlify-honeypot="bot-field">
     <label for="name">Name</label>
     <input type="text" name="name" placeholder="What's your name?" required>
 
@@ -18,6 +18,11 @@ layout: layouts/base.njk
 
     <label for="message">What did you have in mind?</label>
     <textarea name="message" rows="10" required>We're looking for a team that can [design / prototype / build / optimize] our [website / web app / mobile app] that [makes it easy for potential donors to donate]. We would like to launch [in x months] and we have [dollar amount] to spend.</textarea>
+
+    <p class="hidden">
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
+
 
     <div class="center">
       <input type="submit" value="Send" class="button uppercase">

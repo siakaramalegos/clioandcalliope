@@ -83,7 +83,7 @@
 .vertical-space-xl {height: var(--xl);}
 .inset-960 {max-width: 960px;}
 .inset-1220 {max-width: 1220px;}
-
+.hidden {display: none;}
 
 /* // Base styles for 1366px width, 1220px max container width */
 body {
